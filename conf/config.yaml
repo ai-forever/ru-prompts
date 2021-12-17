@@ -1,0 +1,28 @@
+defaults:
+  - task: default
+  - backbone: rugpt3large
+  - tokenizer: rugpt3
+  - optimizer: adamw
+  - prompt_provider: tensor
+  - scheduler: linear_schedule_with_warmup
+  - training: default
+  - callbacks:
+    - freeze_transformer_unfreeze_prompt
+    - reduce_checkpoint
+    - save_pretrained_prompt
+    - wb_log_hydra_config
+
+  # inherit overrides
+  - /task/${task}@_here_
+
+_debug_str: debug_${debug}
+hydra_output_dir:
+  debug_True: ./outputs/debug/${task.task_name}/${now:%Y%m%d_%H%M%S}
+  debug_False: ./outputs/${task.task_name}/${now:%Y%m%d_%H%M%S}
+
+hydra:
+  run:
+    dir: ${hydra_output_dir[${_debug_str}]}
+  output_subdir: conf
+
+debug: True

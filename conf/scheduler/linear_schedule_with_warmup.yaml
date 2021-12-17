@@ -1,0 +1,4 @@
+_target_: transformers.optimization.get_linear_schedule_with_warmup
+optimizer: ???
+num_training_steps: ${training.max_steps}
+num_warmup_steps: 2000

@@ -1,0 +1,3 @@
+save_pretrained_prompt:
+  _target_: ruprompts.callbacks.SavePretrainedPrompt
+  prompt: ???

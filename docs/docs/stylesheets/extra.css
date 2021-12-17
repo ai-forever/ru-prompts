@@ -1,0 +1,64 @@
+div.doc-contents/*:not(.first)*/ {
+  /* padding-left: 25px; */
+  /* padding-left: 3.75em; */
+  padding-left: 2em;
+  /* border-left: 1px solid rgba(230, 230, 230); */
+  /* margin-bottom: 80px; */
+}
+
+.doc-heading {
+  /* font-size: 1rem !important; */
+  font-weight: normal !important;
+  --background: 200, 200, 200;
+  background-color: rgba(var(--background), 0.2);
+  border-left: 3px solid rgb(var(--background));
+  padding-left: 0.3rem;
+}
+
+.doc-class > .doc-heading {
+  /* --background: 200, 200, 100; */
+  --background: 100, 100, 200;
+  background-color: rgba(var(--background), 0.2);
+  border-left: 3px solid rgb(var(--background));
+}
+
+.doc-name {
+  display: inline;
+  font-weight: bold !important
+}
+
+.md-typeset code {
+  font-size: 1em;
+}
+
+
+.doc-signature {
+  display: inline;
+  /* font-size: 0.85rem; */
+}
+
+.md-logo {
+  display: none !important;
+}
+
+.md-header__title {
+  margin-left: .6rem;
+}
+
+.doc {
+  font-size: 0.75rem !important;
+}
+
+.doc-property {
+  display: inline;
+  text-transform: uppercase;
+  /* font-size: inherit; */
+}
+
+.doc-properties {
+  margin-right: 0.5em;
+}
+
+.md-typeset h1:target:before, .md-typeset h2:target:before, .md-typeset h3:target:before {
+  content: none;
+}

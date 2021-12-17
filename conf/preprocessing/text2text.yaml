@@ -1,0 +1,6 @@
+_target_: ruprompts.preprocessing.Text2TextPreprocessor
+prompt_format: ???
+tokenizer: ???
+target_field: ???
+truncation_field: ???
+max_tokens: ???

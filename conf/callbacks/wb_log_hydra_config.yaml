@@ -1,0 +1,4 @@
+wb_log_hydra_config:
+  _target_: ruprompts.callbacks.WBLogHydraConfig
+  cfg: ???
+  _recursive_: False

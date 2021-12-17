@@ -1,0 +1,5 @@
+defaults:
+  - autotokenizer
+
+pad_token: "<pad>"
+eos_token: "<pad>"

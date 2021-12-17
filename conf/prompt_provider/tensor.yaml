@@ -1,0 +1,2 @@
+_target_: ruprompts.prompt_provider.TensorPromptProvider
+init: vocab

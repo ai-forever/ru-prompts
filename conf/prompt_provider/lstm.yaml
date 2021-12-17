@@ -1,0 +1,3 @@
+_target_: ruprompts.prompt_provider.LSTMPromptProvider
+input_dim: 16
+hidden_dim: 256

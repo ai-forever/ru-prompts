@@ -1,0 +1,2 @@
+_target_: transformers.GPT2LMHeadModel.from_pretrained
+pretrained_model_name_or_path: ${backbone.pretrained_model_name_or_path}

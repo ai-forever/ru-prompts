@@ -1,0 +1,6 @@
+task_name: ???
+
+defaults:
+  - /preprocessing: text2text
+  - /model: gpt
+  - /prompt_format: default

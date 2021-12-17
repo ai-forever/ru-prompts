@@ -1,0 +1,8 @@
+{{ log.debug() }}
+{% if annotation %}
+    {% if annotation.startswith("#") %}
+        {{ annotation[1:].strip() | convert_markdown(heading_level, html_id) }}
+    {% else %}
+        <code>{{ annotation }}</code>
+    {% endif %}
+{% endif %}

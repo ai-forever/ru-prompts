@@ -1,0 +1,53 @@
+[tool.poetry]
+name = "ruprompts"
+version = "0.1.2"
+description = "Fast prompt tuning framework for large language models"
+authors = ["Sber AI <nekonodyuk@sberbank.ru>"]
+license = "Apache 2.0"
+readme = "README.md"
+homepage = "https://sberbank-ai.github.io/ru-prompts"
+repository = "https://github.com/sberbank-ai/ru-prompts"
+documentation = "https://sberbank-ai.github.io/ru-prompts"
+packages = [
+    { include = "ruprompts" },
+    { include = "conf" }
+]
+include = ["conf/**/*.yaml"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+transformers = "^4.6.0"
+typeguard = "^2.13.3"
+typing-extensions = "^4.0.1"
+torch = "^1.10.0"
+hydra-core = {version = "^1.1.0", optional = true}
+datasets = {version = "^1.16.1", optional = true}
+torchtyping = "^0.1.4"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.5"
+hypothesis = "^6.31.3"
+black = {version = "^21.12b0", allow-prereleases = true}
+isort = {version = "^5.10.1", allow-prereleases = true}
+mkdocs = "^1.2.3"
+mkdocstrings = "^0.16.2"
+mkdocs-material = "^8.1.0"
+mkdocs-simple-hooks = "^0.1.3"
+pytest-cov = "^3.0.0"
+
+[tool.poetry.extras]
+hydra = ["hydra-core", "datasets"]
+
+[tool.poetry.scripts]
+ruprompts-train = 'ruprompts.cli.train:hydra_entry'
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 100
+
+[tool.isort]
+profile = "black"
+line_length = 100

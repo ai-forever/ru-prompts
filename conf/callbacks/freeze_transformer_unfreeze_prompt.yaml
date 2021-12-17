@@ -1,0 +1,2 @@
+freeze_transformer_unfreeze_prompt:
+  _target_: ruprompts.callbacks.FreezeTransformerUnfreezePrompt

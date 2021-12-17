@@ -1,0 +1,8 @@
+defaults:
+  - default
+
+path: ???
+data_files:
+  _target_: builtins.dict
+  train: ???
+  validation: ???

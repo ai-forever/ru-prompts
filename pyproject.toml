@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ruprompts"
-version = "0.1.0"
+version = "0.1.2"
 description = "Fast prompt tuning framework for large language models"
 authors = ["Sber AI <nekonodyuk@sberbank.ru>"]
 license = "Apache 2.0"

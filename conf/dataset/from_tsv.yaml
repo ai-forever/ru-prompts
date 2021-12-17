@@ -1,4 +1,5 @@
 defaults:
   - from_local
 
-path: json
+path: csv
+delimiter: "\t"

@@ -1,0 +1,1633 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../null">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.3">
+    
+    
+      
+        <title>Prompt Format - ruPrompts</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.edf004c2.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ffffff">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,400i,700%7CFira+Code&display=fallback">
+        <style>:root{--md-text-font:"Roboto Slab";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-XL0ZTQKPQ2"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&gtag("event","search",{search_term:this.value})}),"undefined"!=typeof location$&&location$.subscribe(function(e){gtag("config","G-XL0ZTQKPQ2",{page_path:e.pathname})})})</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XL0ZTQKPQ2"></script>
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="white" data-md-color-accent="blue">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ruprompts.prompt_format.PromptFormat" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="ruPrompts" class="md-header__button md-logo" aria-label="ruPrompts" data-md-component="logo">
+      
+  <img src="../../null" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ruPrompts
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Prompt Format
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/sberbank-ai/ru-prompts" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sberbank-ai/ru-prompts
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../getting-started/quick-start/" class="md-tabs__link md-tabs__link--active">
+        Docs
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../tutorials/" class="md-tabs__link">
+      Tutorials
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../pretrained/" class="md-tabs__link">
+        Pretrained Prompts
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ruPrompts" class="md-nav__button md-logo" aria-label="ruPrompts" data-md-component="logo">
+      
+  <img src="../../null" alt="logo">
+
+    </a>
+    ruPrompts
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/sberbank-ai/ru-prompts" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sberbank-ai/ru-prompts
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Docs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Docs" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Docs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          Getting Started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Getting Started" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/quick-start/" class="md-nav__link">
+        Quick Start
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          Python API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Python API" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Python API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prompt/" class="md-nav__link">
+        Prompt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Prompt Format
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Prompt Format
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ruprompts.prompt_format.PromptFormat" class="md-nav__link">
+    PromptFormat
+  </a>
+  
+    <nav class="md-nav" aria-label="PromptFormat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ruprompts.prompt_format.PromptFormat--format-patterns" class="md-nav__link">
+    Format patterns:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ruprompts.prompt_format.PromptFormatSafe" class="md-nav__link">
+    PromptFormatSafe
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ruprompts.prompt_format.BasePromptFormat" class="md-nav__link">
+    BasePromptFormat
+  </a>
+  
+    <nav class="md-nav" aria-label="BasePromptFormat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ruprompts.prompt_format.BasePromptFormat.prompt_length" class="md-nav__link">
+    prompt_length
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruprompts.prompt_format.BasePromptFormat.__call__" class="md-nav__link">
+    __call__()
+  </a>
+  
+    <nav class="md-nav" aria-label="__call__()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ruprompts.prompt_format.BasePromptFormat.__call__--returns" class="md-nav__link">
+    Returns:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruprompts.prompt_format.BasePromptFormat.as_dict" class="md-nav__link">
+    as_dict()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruprompts.prompt_format.BasePromptFormat.batch_format" class="md-nav__link">
+    batch_format()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruprompts.prompt_format.BasePromptFormat.format" class="md-nav__link">
+    format()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prompt_provider/" class="md-nav__link">
+        Prompt Provider
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../callbacks/" class="md-nav__link">
+        Callbacks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pipelines/" class="md-nav__link">
+        Pipelines
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preprocessing/" class="md-nav__link">
+        Preprocessing
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../hydra/">Hydra API</a>
+          
+            <label for="__nav_2_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Hydra API" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Hydra API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hydra/config/" class="md-nav__link">
+        Config Structure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hydra/cli/" class="md-nav__link">
+        Using CLI
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/" class="md-nav__link">
+        Tutorials
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../pretrained/">Pretrained Prompts</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Pretrained Prompts" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Pretrained Prompts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ruprompts.prompt_format.PromptFormat" class="md-nav__link">
+    PromptFormat
+  </a>
+  
+    <nav class="md-nav" aria-label="PromptFormat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ruprompts.prompt_format.PromptFormat--format-patterns" class="md-nav__link">
+    Format patterns:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ruprompts.prompt_format.PromptFormatSafe" class="md-nav__link">
+    PromptFormatSafe
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ruprompts.prompt_format.BasePromptFormat" class="md-nav__link">
+    BasePromptFormat
+  </a>
+  
+    <nav class="md-nav" aria-label="BasePromptFormat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ruprompts.prompt_format.BasePromptFormat.prompt_length" class="md-nav__link">
+    prompt_length
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruprompts.prompt_format.BasePromptFormat.__call__" class="md-nav__link">
+    __call__()
+  </a>
+  
+    <nav class="md-nav" aria-label="__call__()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ruprompts.prompt_format.BasePromptFormat.__call__--returns" class="md-nav__link">
+    Returns:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruprompts.prompt_format.BasePromptFormat.as_dict" class="md-nav__link">
+    as_dict()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruprompts.prompt_format.BasePromptFormat.batch_format" class="md-nav__link">
+    batch_format()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruprompts.prompt_format.BasePromptFormat.format" class="md-nav__link">
+    format()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+  <h1>Prompt Format</h1>
+
+<div class="doc doc-object doc-class">
+
+
+
+
+<h2 class="doc doc-heading" id="ruprompts.prompt_format.PromptFormat">
+
+        <!-- <code> -->
+
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-class"><code>class</code></small>
+  </span>
+
+            <div class="doc doc-name"><code>ruprompts.prompt_format.PromptFormat</code></div>
+              <!-- {&#39;name&#39;: &#39;__init__&#39;, &#39;path&#39;: &#39;ruprompts.prompt_format.PromptFormat.__init__&#39;, &#39;category&#39;: &#39;method&#39;, &#39;file_path&#39;: &#39;/home/runner/work/ru-prompts/ru-prompts/ruprompts/prompt_format.py&#39;, &#39;relative_file_path&#39;: &#39;ruprompts/prompt_format.py&#39;, &#39;properties&#39;: [&#39;special&#39;], &#39;parent_path&#39;: &#39;ruprompts.prompt_format.PromptFormat&#39;, &#39;has_contents&#39;: True, &#39;docstring&#39;: &#39;Args:\n    template (str): See [format patterns][ruprompts.prompt_format.PromptFormat--format-patterns].\n    compiled_template (Optional[str]): Compiled template.\n    tokenizer (Optional[PreTrainedTokenizerBase]): Tokenizer to process the `&lt;P&gt;Text&lt;/P&gt;` patterns.&#39;, &#39;docstring_sections&#39;: [{&#39;type&#39;: &#39;parameters&#39;, &#39;value&#39;: [{&#39;description&#39;: &#39;See [format patterns][ruprompts.prompt_format.PromptFormat--format-patterns].&#39;, &#39;annotation&#39;: &#39;str&#39;, &#39;name&#39;: &#39;template&#39;, &#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;default&#39;: &#39;&#39;, &#39;is_optional&#39;: False, &#39;is_required&#39;: True, &#39;is_args&#39;: False, &#39;is_kwargs&#39;: False}, {&#39;description&#39;: &#39;Compiled template.&#39;, &#39;annotation&#39;: &#39;Optional[str]&#39;, &#39;name&#39;: &#39;compiled_template&#39;, &#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;default&#39;: &#39;None&#39;, &#39;is_optional&#39;: True, &#39;is_required&#39;: False, &#39;is_args&#39;: False, &#39;is_kwargs&#39;: False}, {&#39;description&#39;: &#39;Tokenizer to process the `&lt;P&gt;Text&lt;/P&gt;` patterns.&#39;, &#39;annotation&#39;: &#39;Optional[transformers.tokenization_utils_base.PreTrainedTokenizerBase]&#39;, &#39;name&#39;: &#39;tokenizer&#39;, &#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;default&#39;: &#39;None&#39;, &#39;is_optional&#39;: True, &#39;is_required&#39;: False, &#39;is_args&#39;: False, &#39;is_kwargs&#39;: False}]}], &#39;source&#39;: {&#39;code&#39;: &#39;    def __init__(\n        self,\n        template: str,\n        compiled_template: Optional[str] = None,\n        tokenizer: Optional[PreTrainedTokenizerBase] = None,\n    ):\n        &#34;&#34;&#34;\n        Args:\n            template (str): See [format patterns][ruprompts.prompt_format.PromptFormat--format-patterns].\n            compiled_template (Optional[str]): Compiled template.\n            tokenizer (Optional[PreTrainedTokenizerBase]): Tokenizer to process the `&lt;P&gt;Text&lt;/P&gt;` patterns.\n        &#34;&#34;&#34;\n\n        self.template = template\n        self._is_initialized = False\n\n        if compiled_template is not None:\n            self.compiled_template = compiled_template\n            self._is_initialized = True\n\n        if tokenizer is not None:\n            self.initialize(tokenizer)\n\n        self.formattable = None\n        self._prompt_token_ids = []\n        self._init_tokens = {}\n        self.prompt_token = PROMPT_TOKEN\n        self.key = None\n&#39;, &#39;line_start&#39;: 165}, &#39;children&#39;: [], &#39;attributes&#39;: [], &#39;methods&#39;: [], &#39;functions&#39;: [], &#39;modules&#39;: [], &#39;classes&#39;: [], &#39;signature&#39;: {&#39;parameters&#39;: [{&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;self&#39;}, {&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;template&#39;, &#39;annotation&#39;: &#39;str&#39;}, {&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;compiled_template&#39;, &#39;annotation&#39;: &#39;Optional[str]&#39;, &#39;default&#39;: &#39;None&#39;}, {&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;tokenizer&#39;, &#39;annotation&#39;: &#39;Optional[transformers.tokenization_utils_base.PreTrainedTokenizerBase]&#39;, &#39;default&#39;: &#39;None&#39;}]}} -->
+                <div class="doc doc-signature">
+<code class="highlight language-python"><span class="p">(</span><span class="n">template</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">compiled_template</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">tokenizer</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">transformers</span><span class="o">.</span><span class="n">tokenization_utils_base</span><span class="o">.</span><span class="n">PreTrainedTokenizerBase</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span></code>                </div>
+          <!-- [{&#39;name&#39;: &#39;__init__&#39;, &#39;path&#39;: &#39;ruprompts.prompt_format.PromptFormat.__init__&#39;, &#39;category&#39;: &#39;method&#39;, &#39;file_path&#39;: &#39;/home/runner/work/ru-prompts/ru-prompts/ruprompts/prompt_format.py&#39;, &#39;relative_file_path&#39;: &#39;ruprompts/prompt_format.py&#39;, &#39;properties&#39;: [&#39;special&#39;], &#39;parent_path&#39;: &#39;ruprompts.prompt_format.PromptFormat&#39;, &#39;has_contents&#39;: True, &#39;docstring&#39;: &#39;Args:\n    template (str): See [format patterns][ruprompts.prompt_format.PromptFormat--format-patterns].\n    compiled_template (Optional[str]): Compiled template.\n    tokenizer (Optional[PreTrainedTokenizerBase]): Tokenizer to process the `&lt;P&gt;Text&lt;/P&gt;` patterns.&#39;, &#39;docstring_sections&#39;: [{&#39;type&#39;: &#39;parameters&#39;, &#39;value&#39;: [{&#39;description&#39;: &#39;See [format patterns][ruprompts.prompt_format.PromptFormat--format-patterns].&#39;, &#39;annotation&#39;: &#39;str&#39;, &#39;name&#39;: &#39;template&#39;, &#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;default&#39;: &#39;&#39;, &#39;is_optional&#39;: False, &#39;is_required&#39;: True, &#39;is_args&#39;: False, &#39;is_kwargs&#39;: False}, {&#39;description&#39;: &#39;Compiled template.&#39;, &#39;annotation&#39;: &#39;Optional[str]&#39;, &#39;name&#39;: &#39;compiled_template&#39;, &#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;default&#39;: &#39;None&#39;, &#39;is_optional&#39;: True, &#39;is_required&#39;: False, &#39;is_args&#39;: False, &#39;is_kwargs&#39;: False}, {&#39;description&#39;: &#39;Tokenizer to process the `&lt;P&gt;Text&lt;/P&gt;` patterns.&#39;, &#39;annotation&#39;: &#39;Optional[transformers.tokenization_utils_base.PreTrainedTokenizerBase]&#39;, &#39;name&#39;: &#39;tokenizer&#39;, &#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;default&#39;: &#39;None&#39;, &#39;is_optional&#39;: True, &#39;is_required&#39;: False, &#39;is_args&#39;: False, &#39;is_kwargs&#39;: False}]}], &#39;source&#39;: {&#39;code&#39;: &#39;    def __init__(\n        self,\n        template: str,\n        compiled_template: Optional[str] = None,\n        tokenizer: Optional[PreTrainedTokenizerBase] = None,\n    ):\n        &#34;&#34;&#34;\n        Args:\n            template (str): See [format patterns][ruprompts.prompt_format.PromptFormat--format-patterns].\n            compiled_template (Optional[str]): Compiled template.\n            tokenizer (Optional[PreTrainedTokenizerBase]): Tokenizer to process the `&lt;P&gt;Text&lt;/P&gt;` patterns.\n        &#34;&#34;&#34;\n\n        self.template = template\n        self._is_initialized = False\n\n        if compiled_template is not None:\n            self.compiled_template = compiled_template\n            self._is_initialized = True\n\n        if tokenizer is not None:\n            self.initialize(tokenizer)\n\n        self.formattable = None\n        self._prompt_token_ids = []\n        self._init_tokens = {}\n        self.prompt_token = PROMPT_TOKEN\n        self.key = None\n&#39;, &#39;line_start&#39;: 165}, &#39;children&#39;: [], &#39;attributes&#39;: [], &#39;methods&#39;: [], &#39;functions&#39;: [], &#39;modules&#39;: [], &#39;classes&#39;: [], &#39;signature&#39;: {&#39;parameters&#39;: [{&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;self&#39;}, {&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;template&#39;, &#39;annotation&#39;: &#39;str&#39;}, {&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;compiled_template&#39;, &#39;annotation&#39;: &#39;Optional[str]&#39;, &#39;default&#39;: &#39;None&#39;}, {&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;tokenizer&#39;, &#39;annotation&#39;: &#39;Optional[transformers.tokenization_utils_base.PreTrainedTokenizerBase]&#39;, &#39;default&#39;: &#39;None&#39;}]}}] -->
+        <!-- </code> -->
+
+
+</h2>
+
+    <div class="doc doc-contents first">
+
+      <p>Arranges trainable tokens and dataset fields.</p>
+<h4 id="ruprompts.prompt_format.PromptFormat--format-patterns">Format patterns:</h4>
+<ul>
+<li>Repeated tokens:<ul>
+<li>Pattern: <code>&lt;P*{int}&gt;</code></li>
+<li>Example: <code>&lt;P*3&gt;</code></li>
+<li>Compiled example: <code>&lt;P&gt;&lt;P&gt;&lt;P&gt;</code></li>
+</ul>
+</li>
+<li>Initialization from phrase:<ul>
+<li>Pattern: <code>&lt;P&gt;{str}&lt;/P&gt;</code></li>
+<li>Example: <code>&lt;P&gt;Two tokens&lt;/P&gt;</code></li>
+<li>Compiled example: <code>&lt;P&gt;&lt;P&gt;</code>, prompt provider is initialized with embeddings of tokens <code>Two</code> and <code>tokens</code></li>
+</ul>
+</li>
+</ul>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">PromptProvider</span><span class="p">(</span><span class="s2">&quot;&lt;P*20&gt;</span><span class="si">{text}</span><span class="s2">&lt;P*10&gt;&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">PromptProvider</span><span class="p">(</span><span class="s2">&quot;&lt;P&gt;Passage:&lt;/P&gt;</span><span class="si">{passage}</span><span class="s2">&lt;P&gt;</span><span class="se">\n</span><span class="s2">Question:&lt;/P&gt;</span><span class="si">{question}</span><span class="s2">&lt;P&gt;</span><span class="se">\n</span><span class="s2">Answer:&lt;/P&gt;&quot;</span><span class="p">)</span>
+</code></pre></div>
+      <p>See also:
+    <a href="#ruprompts.prompt_format.BasePromptFormat.__call__"><code>BasePromptFormat.__call__</code></a></p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>template</code></td>
+        <td>
+        <code>str</code>
+ </td>
+        <td><p>See <a href="#ruprompts.prompt_format.PromptFormat--format-patterns">format patterns</a>.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>compiled_template</code></td>
+        <td>
+        <code>Optional[str]</code>
+ </td>
+        <td><p>Compiled template.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>tokenizer</code></td>
+        <td>
+        <code>Optional[transformers.tokenization_utils_base.PreTrainedTokenizerBase]</code>
+ </td>
+        <td><p>Tokenizer to process the <code>&lt;P&gt;Text&lt;/P&gt;</code> patterns.</p></td>
+        <td><code>None</code></td>
+      </tr>
+  </tbody>
+</table>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+
+
+<h2 class="doc doc-heading" id="ruprompts.prompt_format.PromptFormatSafe">
+
+        <!-- <code> -->
+
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-class"><code>class</code></small>
+  </span>
+
+            <div class="doc doc-name"><code>ruprompts.prompt_format.PromptFormatSafe</code></div>
+              <!-- {&#39;name&#39;: &#39;__init__&#39;, &#39;path&#39;: &#39;ruprompts.prompt_format.PromptFormatSafe.__init__&#39;, &#39;category&#39;: &#39;method&#39;, &#39;file_path&#39;: &#39;/home/runner/work/ru-prompts/ru-prompts/ruprompts/prompt_format.py&#39;, &#39;relative_file_path&#39;: &#39;ruprompts/prompt_format.py&#39;, &#39;properties&#39;: [&#39;special&#39;], &#39;parent_path&#39;: &#39;ruprompts.prompt_format.PromptFormatSafe&#39;, &#39;has_contents&#39;: False, &#39;docstring&#39;: &#39;&#39;, &#39;docstring_sections&#39;: [], &#39;source&#39;: {&#39;code&#39;: &#39;    def __init__(self, *args, **kwargs):\n        raise NotImplementedError()\n&#39;, &#39;line_start&#39;: 311}, &#39;children&#39;: [], &#39;attributes&#39;: [], &#39;methods&#39;: [], &#39;functions&#39;: [], &#39;modules&#39;: [], &#39;classes&#39;: [], &#39;signature&#39;: {&#39;parameters&#39;: [{&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;self&#39;}, {&#39;kind&#39;: &#39;VAR_POSITIONAL&#39;, &#39;name&#39;: &#39;args&#39;}, {&#39;kind&#39;: &#39;VAR_KEYWORD&#39;, &#39;name&#39;: &#39;kwargs&#39;}]}} -->
+                <div class="doc doc-signature">
+<code class="highlight language-python"><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>                </div>
+          <!-- [{&#39;name&#39;: &#39;__init__&#39;, &#39;path&#39;: &#39;ruprompts.prompt_format.PromptFormatSafe.__init__&#39;, &#39;category&#39;: &#39;method&#39;, &#39;file_path&#39;: &#39;/home/runner/work/ru-prompts/ru-prompts/ruprompts/prompt_format.py&#39;, &#39;relative_file_path&#39;: &#39;ruprompts/prompt_format.py&#39;, &#39;properties&#39;: [&#39;special&#39;], &#39;parent_path&#39;: &#39;ruprompts.prompt_format.PromptFormatSafe&#39;, &#39;has_contents&#39;: False, &#39;docstring&#39;: &#39;&#39;, &#39;docstring_sections&#39;: [], &#39;source&#39;: {&#39;code&#39;: &#39;    def __init__(self, *args, **kwargs):\n        raise NotImplementedError()\n&#39;, &#39;line_start&#39;: 311}, &#39;children&#39;: [], &#39;attributes&#39;: [], &#39;methods&#39;: [], &#39;functions&#39;: [], &#39;modules&#39;: [], &#39;classes&#39;: [], &#39;signature&#39;: {&#39;parameters&#39;: [{&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;self&#39;}, {&#39;kind&#39;: &#39;VAR_POSITIONAL&#39;, &#39;name&#39;: &#39;args&#39;}, {&#39;kind&#39;: &#39;VAR_KEYWORD&#39;, &#39;name&#39;: &#39;kwargs&#39;}]}}] -->
+        <!-- </code> -->
+
+
+</h2>
+
+    <div class="doc doc-contents first">
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+
+
+<h2 class="doc doc-heading" id="ruprompts.prompt_format.BasePromptFormat">
+
+        <!-- <code> -->
+
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-class"><code>class</code></small>
+  </span>
+
+            <div class="doc doc-name"><code>ruprompts.prompt_format.BasePromptFormat</code></div>
+          <!-- [{&#39;name&#39;: &#39;__call__&#39;, &#39;path&#39;: &#39;ruprompts.prompt_format.BasePromptFormat.__call__&#39;, &#39;category&#39;: &#39;method&#39;, &#39;file_path&#39;: &#39;/home/runner/work/ru-prompts/ru-prompts/ruprompts/prompt_format.py&#39;, &#39;relative_file_path&#39;: &#39;ruprompts/prompt_format.py&#39;, &#39;properties&#39;: [&#39;special&#39;], &#39;parent_path&#39;: &#39;ruprompts.prompt_format.BasePromptFormat&#39;, &#39;has_contents&#39;: True, &#39;docstring&#39;: &#39;Applies prompt format to either one or multiple items.\n\nTakes a either one item or list of them, where item is a dictionary with string keys.\nEach item is then formatted into a single string, where the keys are inserted\nthe same way as in format string. If `return_ranges=True`, also returns a dict of slices,\nfor the value of each key in item containing its start and end positions in the resulting string.\n\nExamples:\n    &gt;&gt;&gt; f = PromptFormat(&#34;&lt;P&gt;{text}&lt;P&gt;&#34;)\n    &gt;&gt;&gt; item = {&#34;text&#34;: &#34;one two three&#34;, &#34;other&#34;: &#34;value&#34;}\n    &gt;&gt;&gt; s, r = f(item, return_ranges=True)\n    &gt;&gt;&gt; assert s == &#34;&lt;P&gt;one two three&lt;P&gt;&#34;\n    &gt;&gt;&gt; assert s[r] == item[&#34;text&#34;]\n\n    &gt;&gt;&gt; f(text=&#34;one two three&#34;, return_ranges=True)\n\n    &gt;&gt;&gt; f([{&#34;text&#34;: &#34;a&#34;}, {&#34;text&#34;: &#34;b&#34;}], return_ranges=True)\n\nArgs:\n    items: Item or list of items.\n    return_ranges: Whether to return ranges.\n    **kwargs: Can be used instead of `items` (see examples).\n\n# Returns:\n\n| Type                                       | Description                          | Condition                                                     |\n| ------------------------------------------ | ------------------------------------ | ------------------------------------------------------------- |\n| `str`                                      | formatted string                     | `items` is a `Dict[str, Any]` and `return_ranges=False`       |\n| `Tuple[str, Dict[str, slice]]`             | formatted string and ranges          | `items` is a `Dict[str, Any]` and `return_ranges=True`        |\n| `List[str]`                                | list of formatted strings            | `items` is a `List[Dict[str, Any]]` and `return_ranges=False` |\n| `Tuple[List[str], List[Dict[str, slice]]]` | list of formatted strings and ranges | `items` is a `List[Dict[str, Any]]` and `return_ranges=True`  |&#39;, &#39;docstring_sections&#39;: [{&#39;type&#39;: &#39;markdown&#39;, &#39;value&#39;: &#39;Applies prompt format to either one or multiple items.\n\nTakes a either one item or list of them, where item is a dictionary with string keys.\nEach item is then formatted into a single string, where the keys are inserted\nthe same way as in format string. If `return_ranges=True`, also returns a dict of slices,\nfor the value of each key in item containing its start and end positions in the resulting string.\n&#39;}, {&#39;type&#39;: &#39;examples&#39;, &#39;value&#39;: [[&#39;examples&#39;, &#39;&gt;&gt;&gt; f = PromptFormat(&#34;&lt;P&gt;{text}&lt;P&gt;&#34;)\n&gt;&gt;&gt; item = {&#34;text&#34;: &#34;one two three&#34;, &#34;other&#34;: &#34;value&#34;}\n&gt;&gt;&gt; s, r = f(item, return_ranges=True)\n&gt;&gt;&gt; assert s == &#34;&lt;P&gt;one two three&lt;P&gt;&#34;\n&gt;&gt;&gt; assert s[r] == item[&#34;text&#34;]&#39;], [&#39;examples&#39;, &#39;&gt;&gt;&gt; f(text=&#34;one two three&#34;, return_ranges=True)&#39;], [&#39;examples&#39;, &#39;&gt;&gt;&gt; f([{&#34;text&#34;: &#34;a&#34;}, {&#34;text&#34;: &#34;b&#34;}], return_ranges=True)&#39;]]}, {&#39;type&#39;: &#39;parameters&#39;, &#39;value&#39;: [{&#39;description&#39;: &#39;Item or list of items.&#39;, &#39;annotation&#39;: &#39;Union[Dict[str, Any], List[Dict[str, Any]]]&#39;, &#39;name&#39;: &#39;items&#39;, &#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;default&#39;: &#39;None&#39;, &#39;is_optional&#39;: True, &#39;is_required&#39;: False, &#39;is_args&#39;: False, &#39;is_kwargs&#39;: False}, {&#39;description&#39;: &#39;Whether to return ranges.&#39;, &#39;annotation&#39;: &#39;bool&#39;, &#39;name&#39;: &#39;return_ranges&#39;, &#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;default&#39;: &#39;False&#39;, &#39;is_optional&#39;: True, &#39;is_required&#39;: False, &#39;is_args&#39;: False, &#39;is_kwargs&#39;: False}, {&#39;description&#39;: &#39;Can be used instead of `items` (see examples).&#39;, &#39;annotation&#39;: &#39;&#39;, &#39;name&#39;: &#39;**kwargs&#39;, &#39;kind&#39;: &#39;VAR_KEYWORD&#39;, &#39;default&#39;: &#39;{}&#39;, &#39;is_optional&#39;: False, &#39;is_required&#39;: True, &#39;is_args&#39;: False, &#39;is_kwargs&#39;: True}]}, {&#39;type&#39;: &#39;markdown&#39;, &#39;value&#39;: &#39;# Returns:\n\n| Type                                       | Description                          | Condition                                                     |\n| ------------------------------------------ | ------------------------------------ | ------------------------------------------------------------- |\n| `str`                                      | formatted string                     | `items` is a `Dict[str, Any]` and `return_ranges=False`       |\n| `Tuple[str, Dict[str, slice]]`             | formatted string and ranges          | `items` is a `Dict[str, Any]` and `return_ranges=True`        |\n| `List[str]`                                | list of formatted strings            | `items` is a `List[Dict[str, Any]]` and `return_ranges=False` |\n| `Tuple[List[str], List[Dict[str, slice]]]` | list of formatted strings and ranges | `items` is a `List[Dict[str, Any]]` and `return_ranges=True`  |&#39;}], &#39;source&#39;: {&#39;code&#39;: &#39;    def __call__(\n        self,\n        items: Optional[Union[Dict[str, Any], List[Dict[str, Any]]]] = None,\n        return_ranges: bool = False,\n        **kwargs,\n    ) -&gt; Union[\n        str, Tuple[str, Dict[str, slice]], List[str], Tuple[List[str], List[Dict[str, slice]]]\n    ]:\n        &#34;&#34;&#34;Applies prompt format to either one or multiple items.\n\n        Takes a either one item or list of them, where item is a dictionary with string keys.\n        Each item is then formatted into a single string, where the keys are inserted\n        the same way as in format string. If `return_ranges=True`, also returns a dict of slices,\n        for the value of each key in item containing its start and end positions in the resulting string.\n\n        Examples:\n            &gt;&gt;&gt; f = PromptFormat(&#34;&lt;P&gt;{text}&lt;P&gt;&#34;)\n            &gt;&gt;&gt; item = {&#34;text&#34;: &#34;one two three&#34;, &#34;other&#34;: &#34;value&#34;}\n            &gt;&gt;&gt; s, r = f(item, return_ranges=True)\n            &gt;&gt;&gt; assert s == &#34;&lt;P&gt;one two three&lt;P&gt;&#34;\n            &gt;&gt;&gt; assert s[r] == item[&#34;text&#34;]\n\n            &gt;&gt;&gt; f(text=&#34;one two three&#34;, return_ranges=True)\n\n            &gt;&gt;&gt; f([{&#34;text&#34;: &#34;a&#34;}, {&#34;text&#34;: &#34;b&#34;}], return_ranges=True)\n\n        Args:\n            items: Item or list of items.\n            return_ranges: Whether to return ranges.\n            **kwargs: Can be used instead of `items` (see examples).\n\n        # Returns:\n\n        | Type                                       | Description                          | Condition                                                     |\n        | ------------------------------------------ | ------------------------------------ | ------------------------------------------------------------- |\n        | `str`                                      | formatted string                     | `items` is a `Dict[str, Any]` and `return_ranges=False`       |\n        | `Tuple[str, Dict[str, slice]]`             | formatted string and ranges          | `items` is a `Dict[str, Any]` and `return_ranges=True`        |\n        | `List[str]`                                | list of formatted strings            | `items` is a `List[Dict[str, Any]]` and `return_ranges=False` |\n        | `Tuple[List[str], List[Dict[str, slice]]]` | list of formatted strings and ranges | `items` is a `List[Dict[str, Any]]` and `return_ranges=True`  |\n\n        &#34;&#34;&#34;\n        if items is None:\n            items = kwargs\n        if isinstance(items, list):\n            return self.batch_format(items, return_ranges)\n        return self.format(items, return_ranges)\n&#39;, &#39;line_start&#39;: 21}, &#39;children&#39;: [], &#39;attributes&#39;: [], &#39;methods&#39;: [], &#39;functions&#39;: [], &#39;modules&#39;: [], &#39;classes&#39;: [], &#39;signature&#39;: {&#39;parameters&#39;: [{&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;self&#39;}, {&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;items&#39;, &#39;annotation&#39;: &#39;Union[Dict[str, Any], List[Dict[str, Any]]]&#39;, &#39;default&#39;: &#39;None&#39;}, {&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;return_ranges&#39;, &#39;annotation&#39;: &#39;bool&#39;, &#39;default&#39;: &#39;False&#39;}, {&#39;kind&#39;: &#39;VAR_KEYWORD&#39;, &#39;name&#39;: &#39;kwargs&#39;}], &#39;return_annotation&#39;: &#39;Union[str, Tuple[str, Dict[str, slice]], List[str], Tuple[List[str], List[Dict[str, slice]]]]&#39;}}, {&#39;name&#39;: &#39;as_dict&#39;, &#39;path&#39;: &#39;ruprompts.prompt_format.BasePromptFormat.as_dict&#39;, &#39;category&#39;: &#39;method&#39;, &#39;file_path&#39;: &#39;/home/runner/work/ru-prompts/ru-prompts/ruprompts/prompt_format.py&#39;, &#39;relative_file_path&#39;: &#39;ruprompts/prompt_format.py&#39;, &#39;properties&#39;: [], &#39;parent_path&#39;: &#39;ruprompts.prompt_format.BasePromptFormat&#39;, &#39;has_contents&#39;: True, &#39;docstring&#39;: &#39;Serializes the prompt object as dict.\n\nReturns such a dict `d` that running `__init__(**d)`\nresults in an identical object.&#39;, &#39;docstring_sections&#39;: [{&#39;type&#39;: &#39;markdown&#39;, &#39;value&#39;: &#39;Serializes the prompt object as dict.\n\nReturns such a dict `d` that running `__init__(**d)`\nresults in an identical object.&#39;}], &#39;source&#39;: {&#39;code&#39;: &#39;    @abc.abstractmethod\n    def as_dict(self) -&gt; Dict[str, Any]:\n        &#34;&#34;&#34;Serializes the prompt object as dict.\n\n        Returns such a dict `d` that running `__init__(**d)`\n        results in an identical object.\n        &#34;&#34;&#34;\n&#39;, &#39;line_start&#39;: 107}, &#39;children&#39;: [], &#39;attributes&#39;: [], &#39;methods&#39;: [], &#39;functions&#39;: [], &#39;modules&#39;: [], &#39;classes&#39;: [], &#39;signature&#39;: {&#39;parameters&#39;: [{&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;self&#39;}], &#39;return_annotation&#39;: &#39;Dict[str, Any]&#39;}}, {&#39;name&#39;: &#39;batch_format&#39;, &#39;path&#39;: &#39;ruprompts.prompt_format.BasePromptFormat.batch_format&#39;, &#39;category&#39;: &#39;method&#39;, &#39;file_path&#39;: &#39;/home/runner/work/ru-prompts/ru-prompts/ruprompts/prompt_format.py&#39;, &#39;relative_file_path&#39;: &#39;ruprompts/prompt_format.py&#39;, &#39;properties&#39;: [], &#39;parent_path&#39;: &#39;ruprompts.prompt_format.BasePromptFormat&#39;, &#39;has_contents&#39;: True, &#39;docstring&#39;: &#39;Formats a list of items into strings and possibly returns ranges.\n\nArgs:\n    item: Items to be formatted.\n    return_ranges: Whether to return ranges.\n\nReturns:\n    Union[List[str], Tuple[List[str], List[Dict[str, slice]]]]: Returns `List[str]` when `return_ranges=False`\n        and `Tuple[List[str], List[Dict[str, slice]]]` when `return_ranges=True`&#39;, &#39;docstring_sections&#39;: [{&#39;type&#39;: &#39;markdown&#39;, &#39;value&#39;: &#39;Formats a list of items into strings and possibly returns ranges.\n&#39;}, {&#39;type&#39;: &#39;parameters&#39;, &#39;value&#39;: [{&#39;description&#39;: &#39;Items to be formatted.&#39;, &#39;annotation&#39;: &#39;&#39;, &#39;name&#39;: &#39;item&#39;, &#39;kind&#39;: &#39;None&#39;, &#39;default&#39;: &#39;&#39;, &#39;is_optional&#39;: False, &#39;is_required&#39;: True, &#39;is_args&#39;: False, &#39;is_kwargs&#39;: False}, {&#39;description&#39;: &#39;Whether to return ranges.&#39;, &#39;annotation&#39;: &#39;bool&#39;, &#39;name&#39;: &#39;return_ranges&#39;, &#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;default&#39;: &#39;False&#39;, &#39;is_optional&#39;: True, &#39;is_required&#39;: False, &#39;is_args&#39;: False, &#39;is_kwargs&#39;: False}]}, {&#39;type&#39;: &#39;return&#39;, &#39;value&#39;: {&#39;description&#39;: &#39;Union[List[str], Tuple[List[str], List[Dict[str, slice]]]]: Returns `List[str]` when `return_ranges=False`\n    and `Tuple[List[str], List[Dict[str, slice]]]` when `return_ranges=True`&#39;, &#39;annotation&#39;: &#39;Union[List[str], Tuple[List[str], List[Dict[str, slice]]]]&#39;}}], &#39;source&#39;: {&#39;code&#39;: &#39;    def batch_format(\n        self, items: List[Dict[str, Any]], return_ranges: bool = False\n    ) -&gt; Union[List[str], Tuple[List[str], List[Dict[str, slice]]]]:\n        &#34;&#34;&#34;Formats a list of items into strings and possibly returns ranges.\n\n        Args:\n            item: Items to be formatted.\n            return_ranges: Whether to return ranges.\n\n        Returns:\n            Union[List[str], Tuple[List[str], List[Dict[str, slice]]]]: Returns `List[str]` when `return_ranges=False`\n                and `Tuple[List[str], List[Dict[str, slice]]]` when `return_ranges=True`\n        &#34;&#34;&#34;\n\n        result = [self.format(item, return_ranges=return_ranges) for item in items]\n        if return_ranges:\n            result, ranges = list(zip(*result))\n            return list(result), list(ranges)\n        return result\n&#39;, &#39;line_start&#39;: 83}, &#39;children&#39;: [], &#39;attributes&#39;: [], &#39;methods&#39;: [], &#39;functions&#39;: [], &#39;modules&#39;: [], &#39;classes&#39;: [], &#39;signature&#39;: {&#39;parameters&#39;: [{&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;self&#39;}, {&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;items&#39;, &#39;annotation&#39;: &#39;List[Dict[str, Any]]&#39;}, {&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;return_ranges&#39;, &#39;annotation&#39;: &#39;bool&#39;, &#39;default&#39;: &#39;False&#39;}], &#39;return_annotation&#39;: &#39;Union[List[str], Tuple[List[str], List[Dict[str, slice]]]]&#39;}}, {&#39;name&#39;: &#39;format&#39;, &#39;path&#39;: &#39;ruprompts.prompt_format.BasePromptFormat.format&#39;, &#39;category&#39;: &#39;method&#39;, &#39;file_path&#39;: &#39;/home/runner/work/ru-prompts/ru-prompts/ruprompts/prompt_format.py&#39;, &#39;relative_file_path&#39;: &#39;ruprompts/prompt_format.py&#39;, &#39;properties&#39;: [], &#39;parent_path&#39;: &#39;ruprompts.prompt_format.BasePromptFormat&#39;, &#39;has_contents&#39;: True, &#39;docstring&#39;: &#39;Formats one item into a string and possibly returns ranges.\n\nArgs:\n    item: Item to be formatted.\n    return_ranges: Whether to return ranges.\n\nReturns:\n    Union[str, Tuple[str, Dict[str, slice]]]: Returns `str` when `return_ranges=False`\n        and `Tuple[str, Dict[str, slice]]` when `return_ranges=True`&#39;, &#39;docstring_sections&#39;: [{&#39;type&#39;: &#39;markdown&#39;, &#39;value&#39;: &#39;Formats one item into a string and possibly returns ranges.\n&#39;}, {&#39;type&#39;: &#39;parameters&#39;, &#39;value&#39;: [{&#39;description&#39;: &#39;Item to be formatted.&#39;, &#39;annotation&#39;: &#39;Dict[str, Any]&#39;, &#39;name&#39;: &#39;item&#39;, &#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;default&#39;: &#39;&#39;, &#39;is_optional&#39;: False, &#39;is_required&#39;: True, &#39;is_args&#39;: False, &#39;is_kwargs&#39;: False}, {&#39;description&#39;: &#39;Whether to return ranges.&#39;, &#39;annotation&#39;: &#39;bool&#39;, &#39;name&#39;: &#39;return_ranges&#39;, &#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;default&#39;: &#39;False&#39;, &#39;is_optional&#39;: True, &#39;is_required&#39;: False, &#39;is_args&#39;: False, &#39;is_kwargs&#39;: False}]}, {&#39;type&#39;: &#39;return&#39;, &#39;value&#39;: {&#39;description&#39;: &#39;Union[str, Tuple[str, Dict[str, slice]]]: Returns `str` when `return_ranges=False`\n    and `Tuple[str, Dict[str, slice]]` when `return_ranges=True`&#39;, &#39;annotation&#39;: &#39;Union[str, Tuple[str, Dict[str, slice]]]&#39;}}], &#39;source&#39;: {&#39;code&#39;: &#39;    @abc.abstractmethod\n    def format(\n        self, item: Dict[str, Any], return_ranges: bool = False\n    ) -&gt; Union[str, Tuple[str, Dict[str, slice]]]:\n        &#34;&#34;&#34;Formats one item into a string and possibly returns ranges.\n\n        Args:\n            item: Item to be formatted.\n            return_ranges: Whether to return ranges.\n\n        Returns:\n            Union[str, Tuple[str, Dict[str, slice]]]: Returns `str` when `return_ranges=False`\n                and `Tuple[str, Dict[str, slice]]` when `return_ranges=True`\n        &#34;&#34;&#34;\n&#39;, &#39;line_start&#39;: 68}, &#39;children&#39;: [], &#39;attributes&#39;: [], &#39;methods&#39;: [], &#39;functions&#39;: [], &#39;modules&#39;: [], &#39;classes&#39;: [], &#39;signature&#39;: {&#39;parameters&#39;: [{&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;self&#39;}, {&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;item&#39;, &#39;annotation&#39;: &#39;Dict[str, Any]&#39;}, {&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;return_ranges&#39;, &#39;annotation&#39;: &#39;bool&#39;, &#39;default&#39;: &#39;False&#39;}], &#39;return_annotation&#39;: &#39;Union[str, Tuple[str, Dict[str, slice]]]&#39;}}, {&#39;name&#39;: &#39;prompt_length&#39;, &#39;path&#39;: &#39;ruprompts.prompt_format.BasePromptFormat.prompt_length&#39;, &#39;category&#39;: &#39;attribute&#39;, &#39;file_path&#39;: &#39;/home/runner/work/ru-prompts/ru-prompts/ruprompts/prompt_format.py&#39;, &#39;relative_file_path&#39;: &#39;ruprompts/prompt_format.py&#39;, &#39;properties&#39;: [&#39;property&#39;, &#39;readonly&#39;], &#39;parent_path&#39;: &#39;ruprompts.prompt_format.BasePromptFormat&#39;, &#39;has_contents&#39;: True, &#39;docstring&#39;: &#39;Count of prompt tokens.&#39;, &#39;docstring_sections&#39;: [{&#39;type&#39;: &#39;markdown&#39;, &#39;value&#39;: &#39;Count of prompt tokens.&#39;}], &#39;source&#39;: {&#39;code&#39;: &#39;    @abc.abstractproperty\n    def prompt_length(self) -&gt; int:\n        &#34;&#34;&#34;Count of prompt tokens.&#34;&#34;&#34;\n&#39;, &#39;line_start&#39;: 103}, &#39;children&#39;: [], &#39;attributes&#39;: [], &#39;methods&#39;: [], &#39;functions&#39;: [], &#39;modules&#39;: [], &#39;classes&#39;: [], &#39;type&#39;: &#39;int&#39;}] -->
+        <!-- </code> -->
+
+
+</h2>
+
+    <div class="doc doc-contents first">
+
+      <p>Base class for all prompt formats.</p>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h3 class="doc doc-heading" id="ruprompts.prompt_format.BasePromptFormat.prompt_length">
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-property"><code>property</code></small>
+      <small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
+  </span>
+
+    <div class="doc doc-name">
+<code class="highlight language-python"><span class="n">prompt_length</span></code>    </div>
+
+    <div class="doc doc-signature">
+<code class="highlight language-python"><span class="p">:</span> <span class="nb">int</span></code>    </div>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Count of prompt tokens.</p>
+    </div>
+
+  </div>
+
+
+
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 class="doc doc-heading" id="ruprompts.prompt_format.BasePromptFormat.__call__">
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+        <div class="doc doc-name">
+        <code>__call__</code>
+        </div>
+
+        <div class="doc doc-signature">
+<code class="highlight language-python"><span class="p">(</span><span class="n">items</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">return_ranges</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">slice</span><span class="p">]],</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">slice</span><span class="p">]]]]</span></code>        </div>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Applies prompt format to either one or multiple items.</p>
+<p>Takes a either one item or list of them, where item is a dictionary with string keys.
+Each item is then formatted into a single string, where the keys are inserted
+the same way as in format string. If <code>return_ranges=True</code>, also returns a dict of slices,
+for the value of each key in item containing its start and end positions in the resulting string.</p>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">f</span> <span class="o">=</span> <span class="n">PromptFormat</span><span class="p">(</span><span class="s2">&quot;&lt;P&gt;</span><span class="si">{text}</span><span class="s2">&lt;P&gt;&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">item</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;one two three&quot;</span><span class="p">,</span> <span class="s2">&quot;other&quot;</span><span class="p">:</span> <span class="s2">&quot;value&quot;</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">return_ranges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">assert</span> <span class="n">s</span> <span class="o">==</span> <span class="s2">&quot;&lt;P&gt;one two three&lt;P&gt;&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">assert</span> <span class="n">s</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">==</span> <span class="n">item</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]</span>
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;one two three&quot;</span><span class="p">,</span> <span class="n">return_ranges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">([{</span><span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;a&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;b&quot;</span><span class="p">}],</span> <span class="n">return_ranges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>items</code></td>
+        <td>
+        <code>Union[Dict[str, Any], List[Dict[str, Any]]]</code>
+ </td>
+        <td><p>Item or list of items.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>return_ranges</code></td>
+        <td>
+        <code>bool</code>
+ </td>
+        <td><p>Whether to return ranges.</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>**kwargs</code></td>
+        <td>
+ </td>
+        <td><p>Can be used instead of <code>items</code> (see examples).</p></td>
+        <td><code>{}</code></td>
+      </tr>
+  </tbody>
+</table>      <h4 id="ruprompts.prompt_format.BasePromptFormat.__call__--returns">Returns:</h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+<th>Condition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>str</code></td>
+<td>formatted string</td>
+<td><code>items</code> is a <code>Dict[str, Any]</code> and <code>return_ranges=False</code></td>
+</tr>
+<tr>
+<td><code>Tuple[str, Dict[str, slice]]</code></td>
+<td>formatted string and ranges</td>
+<td><code>items</code> is a <code>Dict[str, Any]</code> and <code>return_ranges=True</code></td>
+</tr>
+<tr>
+<td><code>List[str]</code></td>
+<td>list of formatted strings</td>
+<td><code>items</code> is a <code>List[Dict[str, Any]]</code> and <code>return_ranges=False</code></td>
+</tr>
+<tr>
+<td><code>Tuple[List[str], List[Dict[str, slice]]]</code></td>
+<td>list of formatted strings and ranges</td>
+<td><code>items</code> is a <code>List[Dict[str, Any]]</code> and <code>return_ranges=True</code></td>
+</tr>
+</tbody>
+</table>
+
+        <details class="quote">
+          <summary>Source code in <code>ruprompts/prompt_format.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">items</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">return_ranges</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span>
+    <span class="nb">str</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">slice</span><span class="p">]],</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">slice</span><span class="p">]]]</span>
+<span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;Applies prompt format to either one or multiple items.</span>
+
+<span class="sd">    Takes a either one item or list of them, where item is a dictionary with string keys.</span>
+<span class="sd">    Each item is then formatted into a single string, where the keys are inserted</span>
+<span class="sd">    the same way as in format string. If `return_ranges=True`, also returns a dict of slices,</span>
+<span class="sd">    for the value of each key in item containing its start and end positions in the resulting string.</span>
+
+<span class="sd">    Examples:</span>
+<span class="sd">        &gt;&gt;&gt; f = PromptFormat(&quot;&lt;P&gt;{text}&lt;P&gt;&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; item = {&quot;text&quot;: &quot;one two three&quot;, &quot;other&quot;: &quot;value&quot;}</span>
+<span class="sd">        &gt;&gt;&gt; s, r = f(item, return_ranges=True)</span>
+<span class="sd">        &gt;&gt;&gt; assert s == &quot;&lt;P&gt;one two three&lt;P&gt;&quot;</span>
+<span class="sd">        &gt;&gt;&gt; assert s[r] == item[&quot;text&quot;]</span>
+
+<span class="sd">        &gt;&gt;&gt; f(text=&quot;one two three&quot;, return_ranges=True)</span>
+
+<span class="sd">        &gt;&gt;&gt; f([{&quot;text&quot;: &quot;a&quot;}, {&quot;text&quot;: &quot;b&quot;}], return_ranges=True)</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        items: Item or list of items.</span>
+<span class="sd">        return_ranges: Whether to return ranges.</span>
+<span class="sd">        **kwargs: Can be used instead of `items` (see examples).</span>
+
+<span class="sd">    # Returns:</span>
+
+<span class="sd">    | Type                                       | Description                          | Condition                                                     |</span>
+<span class="sd">    | ------------------------------------------ | ------------------------------------ | ------------------------------------------------------------- |</span>
+<span class="sd">    | `str`                                      | formatted string                     | `items` is a `Dict[str, Any]` and `return_ranges=False`       |</span>
+<span class="sd">    | `Tuple[str, Dict[str, slice]]`             | formatted string and ranges          | `items` is a `Dict[str, Any]` and `return_ranges=True`        |</span>
+<span class="sd">    | `List[str]`                                | list of formatted strings            | `items` is a `List[Dict[str, Any]]` and `return_ranges=False` |</span>
+<span class="sd">    | `Tuple[List[str], List[Dict[str, slice]]]` | list of formatted strings and ranges | `items` is a `List[Dict[str, Any]]` and `return_ranges=True`  |</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">items</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">items</span> <span class="o">=</span> <span class="n">kwargs</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">batch_format</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="n">return_ranges</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="n">return_ranges</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 class="doc doc-heading" id="ruprompts.prompt_format.BasePromptFormat.as_dict">
+
+
+        <div class="doc doc-name">
+        <code>as_dict</code>
+        </div>
+
+        <div class="doc doc-signature">
+<code class="highlight language-python"><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span></code>        </div>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Serializes the prompt object as dict.</p>
+<p>Returns such a dict <code>d</code> that running <code>__init__(**d)</code>
+results in an identical object.</p>
+
+        <details class="quote">
+          <summary>Source code in <code>ruprompts/prompt_format.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+<span class="k">def</span> <span class="nf">as_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;Serializes the prompt object as dict.</span>
+
+<span class="sd">    Returns such a dict `d` that running `__init__(**d)`</span>
+<span class="sd">    results in an identical object.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 class="doc doc-heading" id="ruprompts.prompt_format.BasePromptFormat.batch_format">
+
+
+        <div class="doc doc-name">
+        <code>batch_format</code>
+        </div>
+
+        <div class="doc doc-signature">
+<code class="highlight language-python"><span class="p">(</span><span class="n">items</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]],</span> <span class="n">return_ranges</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">slice</span><span class="p">]]]]</span></code>        </div>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Formats a list of items into strings and possibly returns ranges.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>item</code></td>
+        <td>
+ </td>
+        <td><p>Items to be formatted.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>return_ranges</code></td>
+        <td>
+        <code>bool</code>
+ </td>
+        <td><p>Whether to return ranges.</p></td>
+        <td><code>False</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>
+        <code>Union[List[str], Tuple[List[str], List[Dict[str, slice]]]]</code>
+ </td>
+      <td><p>Union[List[str], Tuple[List[str], List[Dict[str, slice]]]]: Returns <code>List[str]</code> when <code>return_ranges=False</code>
+    and <code>Tuple[List[str], List[Dict[str, slice]]]</code> when <code>return_ranges=True</code></p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>ruprompts/prompt_format.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">batch_format</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span> <span class="n">items</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]],</span> <span class="n">return_ranges</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">slice</span><span class="p">]]]]:</span>
+    <span class="sd">&quot;&quot;&quot;Formats a list of items into strings and possibly returns ranges.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        item: Items to be formatted.</span>
+<span class="sd">        return_ranges: Whether to return ranges.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Union[List[str], Tuple[List[str], List[Dict[str, slice]]]]: Returns `List[str]` when `return_ranges=False`</span>
+<span class="sd">            and `Tuple[List[str], List[Dict[str, slice]]]` when `return_ranges=True`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">return_ranges</span><span class="o">=</span><span class="n">return_ranges</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">return_ranges</span><span class="p">:</span>
+        <span class="n">result</span><span class="p">,</span> <span class="n">ranges</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">result</span><span class="p">))</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">result</span><span class="p">),</span> <span class="nb">list</span><span class="p">(</span><span class="n">ranges</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 class="doc doc-heading" id="ruprompts.prompt_format.BasePromptFormat.format">
+
+
+        <div class="doc doc-name">
+        <code>format</code>
+        </div>
+
+        <div class="doc doc-signature">
+<code class="highlight language-python"><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">return_ranges</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">slice</span><span class="p">]]]</span></code>        </div>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Formats one item into a string and possibly returns ranges.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>item</code></td>
+        <td>
+        <code>Dict[str, Any]</code>
+ </td>
+        <td><p>Item to be formatted.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>return_ranges</code></td>
+        <td>
+        <code>bool</code>
+ </td>
+        <td><p>Whether to return ranges.</p></td>
+        <td><code>False</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>
+        <code>Union[str, Tuple[str, Dict[str, slice]]]</code>
+ </td>
+      <td><p>Union[str, Tuple[str, Dict[str, slice]]]: Returns <code>str</code> when <code>return_ranges=False</code>
+    and <code>Tuple[str, Dict[str, slice]]</code> when <code>return_ranges=True</code></p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>ruprompts/prompt_format.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+<span class="k">def</span> <span class="nf">format</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">return_ranges</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">slice</span><span class="p">]]]:</span>
+    <span class="sd">&quot;&quot;&quot;Formats one item into a string and possibly returns ranges.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        item: Item to be formatted.</span>
+<span class="sd">        return_ranges: Whether to return ranges.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Union[str, Tuple[str, Dict[str, slice]]]: Returns `str` when `return_ranges=False`</span>
+<span class="sd">            and `Tuple[str, Dict[str, slice]]` when `return_ranges=True`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../prompt/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Prompt" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Prompt
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../prompt_provider/" class="md-footer__link md-footer__link--next" aria-label="Next: Prompt Provider" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Prompt Provider
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.indexes", "search.suggest", "search.highlight", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e1a181d9.min.js"></script>
+      
+    
+  </body>
+</html>

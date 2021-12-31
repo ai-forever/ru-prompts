@@ -1,0 +1,1474 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../null">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.3">
+    
+    
+      
+        <title>Prompt - ruPrompts</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.edf004c2.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ffffff">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,400i,700%7CFira+Code&display=fallback">
+        <style>:root{--md-text-font:"Roboto Slab";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-XL0ZTQKPQ2"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&gtag("event","search",{search_term:this.value})}),"undefined"!=typeof location$&&location$.subscribe(function(e){gtag("config","G-XL0ZTQKPQ2",{page_path:e.pathname})})})</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XL0ZTQKPQ2"></script>
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="white" data-md-color-accent="blue">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ruprompts.prompt.Prompt" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="ruPrompts" class="md-header__button md-logo" aria-label="ruPrompts" data-md-component="logo">
+      
+  <img src="../../null" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ruPrompts
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Prompt
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/sberbank-ai/ru-prompts" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sberbank-ai/ru-prompts
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../getting-started/quick-start/" class="md-tabs__link md-tabs__link--active">
+        Docs
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../tutorials/" class="md-tabs__link">
+      Tutorials
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../pretrained/" class="md-tabs__link">
+        Pretrained Prompts
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ruPrompts" class="md-nav__button md-logo" aria-label="ruPrompts" data-md-component="logo">
+      
+  <img src="../../null" alt="logo">
+
+    </a>
+    ruPrompts
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/sberbank-ai/ru-prompts" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sberbank-ai/ru-prompts
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Docs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Docs" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Docs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          Getting Started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Getting Started" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/quick-start/" class="md-nav__link">
+        Quick Start
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          Python API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Python API" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Python API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Prompt
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Prompt
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ruprompts.prompt.Prompt" class="md-nav__link">
+    Prompt
+  </a>
+  
+    <nav class="md-nav" aria-label="Prompt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ruprompts.prompt.Prompt.from_pretrained" class="md-nav__link">
+    from_pretrained()
+  </a>
+  
+    <nav class="md-nav" aria-label="from_pretrained()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ruprompts.prompt.Prompt.from_pretrained--prompt-pretrained-prompt-instance" class="md-nav__link">
+    Prompt: Pretrained prompt instance.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruprompts.prompt.Prompt.patch" class="md-nav__link">
+    patch()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruprompts.prompt.Prompt.save_pretrained" class="md-nav__link">
+    save_pretrained()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ruprompts.prompt.MultiPrompt" class="md-nav__link">
+    MultiPrompt
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prompt_format/" class="md-nav__link">
+        Prompt Format
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prompt_provider/" class="md-nav__link">
+        Prompt Provider
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../callbacks/" class="md-nav__link">
+        Callbacks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pipelines/" class="md-nav__link">
+        Pipelines
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preprocessing/" class="md-nav__link">
+        Preprocessing
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../hydra/">Hydra API</a>
+          
+            <label for="__nav_2_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Hydra API" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Hydra API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hydra/config/" class="md-nav__link">
+        Config Structure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hydra/cli/" class="md-nav__link">
+        Using CLI
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/" class="md-nav__link">
+        Tutorials
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../pretrained/">Pretrained Prompts</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Pretrained Prompts" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Pretrained Prompts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ruprompts.prompt.Prompt" class="md-nav__link">
+    Prompt
+  </a>
+  
+    <nav class="md-nav" aria-label="Prompt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ruprompts.prompt.Prompt.from_pretrained" class="md-nav__link">
+    from_pretrained()
+  </a>
+  
+    <nav class="md-nav" aria-label="from_pretrained()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ruprompts.prompt.Prompt.from_pretrained--prompt-pretrained-prompt-instance" class="md-nav__link">
+    Prompt: Pretrained prompt instance.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruprompts.prompt.Prompt.patch" class="md-nav__link">
+    patch()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruprompts.prompt.Prompt.save_pretrained" class="md-nav__link">
+    save_pretrained()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ruprompts.prompt.MultiPrompt" class="md-nav__link">
+    MultiPrompt
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+  <h1>Prompt</h1>
+
+<p>Prompt is a core class that combines <a href="../prompt_format/">prompt format</a> and <a href="../prompt_provider/">prompt provider</a>. It takes care of all the internal modifications that should be applied to model and tokenizer to insert the prompt provider and make it trainable. In particular, when you call <a href="#ruprompts.prompt.Prompt.patch"><code>Prompt.patch</code></a>, the following things happen:</p>
+<ol>
+<li>Underlying <a href="../prompt_format/">prompt format</a> is initialized using the tokenizer. At this step, the <code>&lt;P&gt;Initial manual prompt&lt;/P&gt;</code> patterns are tokenized, the prompt format is compiled, and initialization tokens and their positions are identified to be passed to <a href="../prompt_provider/">prompt provider</a>.</li>
+<li>The <a href="../prompt_provider/">prompt provider</a> is initialized: it is given the initialization tokens from step 1 and after regular weight initialization overrides them with the embeddings corresponding to the passed intialization tokens.</li>
+<li>The special tokens needed by <a href="../prompt_format/">prompt format</a> are added to the <code>tokenizer</code>, and their ids are stored.</li>
+<li>A special drop-in <code>torch.nn.Embedding</code> replacement is initialized with the <a href="../prompt_provider/">prompt provider</a> and prompt token ids from step 3.</li>
+<li>The smart embedding layer from step 4 replaces the default embedding layer in the <code>model</code>.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Steps 1 and 2 are skipped if the prompt was created with <a href="#ruprompts.prompt.Prompt.from_pretrained"><code>Prompt.from_pretrained</code></a>.</p>
+</div>
+<p>Prompt class also implements sharing methods:</p>
+<ul>
+<li><a href="#ruprompts.prompt.Prompt.save_pretrained"><code>Prompt.save_pretrained</code></a> - saves the trained prompt to disk ot pushes it to HF Hub</li>
+<li><a href="https://huggingface.co/docs/transformers/main_classes/model#transformers.file_utils.PushToHubMixin.push_to_hub"><code>Prompt.push_to_hub</code></a> - pushes the trained prompt to HF Hub</li>
+<li><a href="#ruprompts.prompt.Prompt.from_pretrained"><code>Prompt.from_pretrained</code></a> - loads the prompt from disk or HF Hub</li>
+</ul>
+
+
+  <div class="doc doc-object doc-class">
+
+
+
+
+<h2 class="doc doc-heading" id="ruprompts.prompt.Prompt">
+
+        <!-- <code> -->
+
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-class"><code>class</code></small>
+  </span>
+
+            <div class="doc doc-name"><code>ruprompts.prompt.Prompt</code></div>
+              <!-- {&#39;name&#39;: &#39;__init__&#39;, &#39;path&#39;: &#39;ruprompts.prompt.Prompt.__init__&#39;, &#39;category&#39;: &#39;method&#39;, &#39;file_path&#39;: &#39;/home/runner/work/ru-prompts/ru-prompts/ruprompts/prompt.py&#39;, &#39;relative_file_path&#39;: &#39;ruprompts/prompt.py&#39;, &#39;properties&#39;: [&#39;special&#39;], &#39;parent_path&#39;: &#39;ruprompts.prompt.Prompt&#39;, &#39;has_contents&#39;: False, &#39;docstring&#39;: None, &#39;docstring_sections&#39;: [], &#39;source&#39;: {&#39;code&#39;: &#39;    def __init__(\n        self,\n        format: BasePromptFormat,\n        provider: BasePromptProvider,\n        config: Optional[PromptConfig] = None,\n    ):\n        self.format = format\n        self.provider = provider\n\n        if config is None:\n            config = PromptConfig()\n        self.config = config\n\n        self.ctx = PromptContext()\n&#39;, &#39;line_start&#39;: 79}, &#39;children&#39;: [], &#39;attributes&#39;: [], &#39;methods&#39;: [], &#39;functions&#39;: [], &#39;modules&#39;: [], &#39;classes&#39;: [], &#39;signature&#39;: {&#39;parameters&#39;: [{&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;self&#39;}, {&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;format&#39;, &#39;annotation&#39;: &#39;BasePromptFormat&#39;}, {&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;provider&#39;, &#39;annotation&#39;: &#39;BasePromptProvider&#39;}, {&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;config&#39;, &#39;annotation&#39;: &#39;Optional[ruprompts.prompt.PromptConfig]&#39;, &#39;default&#39;: &#39;None&#39;}]}} -->
+                <div class="doc doc-signature">
+<code class="highlight language-python"><span class="p">(</span><span class="nb">format</span><span class="p">:</span> <span class="n">BasePromptFormat</span><span class="p">,</span> <span class="n">provider</span><span class="p">:</span> <span class="n">BasePromptProvider</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ruprompts</span><span class="o">.</span><span class="n">prompt</span><span class="o">.</span><span class="n">PromptConfig</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span></code>                </div>
+          <!-- [{&#39;name&#39;: &#39;__init__&#39;, &#39;path&#39;: &#39;ruprompts.prompt.Prompt.__init__&#39;, &#39;category&#39;: &#39;method&#39;, &#39;file_path&#39;: &#39;/home/runner/work/ru-prompts/ru-prompts/ruprompts/prompt.py&#39;, &#39;relative_file_path&#39;: &#39;ruprompts/prompt.py&#39;, &#39;properties&#39;: [&#39;special&#39;], &#39;parent_path&#39;: &#39;ruprompts.prompt.Prompt&#39;, &#39;has_contents&#39;: False, &#39;docstring&#39;: None, &#39;docstring_sections&#39;: [], &#39;source&#39;: {&#39;code&#39;: &#39;    def __init__(\n        self,\n        format: BasePromptFormat,\n        provider: BasePromptProvider,\n        config: Optional[PromptConfig] = None,\n    ):\n        self.format = format\n        self.provider = provider\n\n        if config is None:\n            config = PromptConfig()\n        self.config = config\n\n        self.ctx = PromptContext()\n&#39;, &#39;line_start&#39;: 79}, &#39;children&#39;: [], &#39;attributes&#39;: [], &#39;methods&#39;: [], &#39;functions&#39;: [], &#39;modules&#39;: [], &#39;classes&#39;: [], &#39;signature&#39;: {&#39;parameters&#39;: [{&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;self&#39;}, {&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;format&#39;, &#39;annotation&#39;: &#39;BasePromptFormat&#39;}, {&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;provider&#39;, &#39;annotation&#39;: &#39;BasePromptProvider&#39;}, {&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;config&#39;, &#39;annotation&#39;: &#39;Optional[ruprompts.prompt.PromptConfig]&#39;, &#39;default&#39;: &#39;None&#39;}]}}, {&#39;name&#39;: &#39;from_pretrained&#39;, &#39;path&#39;: &#39;ruprompts.prompt.Prompt.from_pretrained&#39;, &#39;category&#39;: &#39;method&#39;, &#39;file_path&#39;: &#39;/home/runner/work/ru-prompts/ru-prompts/ruprompts/prompt.py&#39;, &#39;relative_file_path&#39;: &#39;ruprompts/prompt.py&#39;, &#39;properties&#39;: [&#39;classmethod&#39;], &#39;parent_path&#39;: &#39;ruprompts.prompt.Prompt&#39;, &#39;has_contents&#39;: True, &#39;docstring&#39;: &#39;Loads a pretrained prompt from disk or HF Hub.\n\nArgs:\n    pretrained_prompt_name_or_path: Either a HF Hub identifier (`konodyuk/prompt_rugpt3large_detox`)\n        or path to a directory containing prompt saved with :s:`ruprompts.prompt.Prompt.save_pretrained`.\n    as_safe: Whether to load prompt format as :s:`ruprompts.prompt_format.PromptFormat`\n        or :s:`ruprompts.prompt_format.PromptFormatSafe`.\n\nReturns:\n    # !s!`ruprompts.prompt.Prompt`: Pretrained prompt instance.&#39;, &#39;docstring_sections&#39;: [{&#39;type&#39;: &#39;markdown&#39;, &#39;value&#39;: &#39;Loads a pretrained prompt from disk or HF Hub.\n&#39;}, {&#39;type&#39;: &#39;parameters&#39;, &#39;value&#39;: [{&#39;description&#39;: &#39;Either a HF Hub identifier (`konodyuk/prompt_rugpt3large_detox`)\nor path to a directory containing prompt saved with :s:`ruprompts.prompt.Prompt.save_pretrained`.&#39;, &#39;annotation&#39;: &#39;Union[str, os.PathLike]&#39;, &#39;name&#39;: &#39;pretrained_prompt_name_or_path&#39;, &#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;default&#39;: &#39;&#39;, &#39;is_optional&#39;: False, &#39;is_required&#39;: True, &#39;is_args&#39;: False, &#39;is_kwargs&#39;: False}, {&#39;description&#39;: &#39;Whether to load prompt format as :s:`ruprompts.prompt_format.PromptFormat`\nor :s:`ruprompts.prompt_format.PromptFormatSafe`.&#39;, &#39;annotation&#39;: &#39;bool&#39;, &#39;name&#39;: &#39;as_safe&#39;, &#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;default&#39;: &#39;False&#39;, &#39;is_optional&#39;: True, &#39;is_required&#39;: False, &#39;is_args&#39;: False, &#39;is_kwargs&#39;: False}]}, {&#39;type&#39;: &#39;return&#39;, &#39;value&#39;: {&#39;description&#39;: &#39;# !s!`ruprompts.prompt.Prompt`: Pretrained prompt instance.&#39;, &#39;annotation&#39;: &#39;Prompt&#39;}}], &#39;source&#39;: {&#39;code&#39;: &#39;    @classmethod\n    def from_pretrained(\n        cls, pretrained_prompt_name_or_path: Union[str, os.PathLike], as_safe: bool = False\n    ) -&gt; &#34;Prompt&#34;:\n        &#34;&#34;&#34;Loads a pretrained prompt from disk or HF Hub.\n\n        Args:\n            pretrained_prompt_name_or_path: Either a HF Hub identifier (`konodyuk/prompt_rugpt3large_detox`)\n                or path to a directory containing prompt saved with :s:`ruprompts.prompt.Prompt.save_pretrained`.\n            as_safe: Whether to load prompt format as :s:`ruprompts.prompt_format.PromptFormat`\n                or :s:`ruprompts.prompt_format.PromptFormatSafe`.\n\n        Returns:\n            # !s!`ruprompts.prompt.Prompt`: Pretrained prompt instance.\n        &#34;&#34;&#34;\n        if os.path.isdir(pretrained_prompt_name_or_path):\n            prompt_file = os.path.join(pretrained_prompt_name_or_path, PROMPT_FILE_NAME)\n            prompt_provider_file = os.path.join(\n                pretrained_prompt_name_or_path, PROMPT_PROVIDER_FILE_NAME\n            )\n        else:\n            prompt_file = _resolve_file(pretrained_prompt_name_or_path, PROMPT_FILE_NAME)\n            prompt_provider_file = _resolve_file(\n                pretrained_prompt_name_or_path, PROMPT_PROVIDER_FILE_NAME\n            )\n\n        with open(prompt_file, &#34;r&#34;) as f:\n            prompt_dict = json.load(f)\n\n        prompt_format_cls = PromptFormat\n        if as_safe:\n            prompt_format_cls = PromptFormatSafe\n        prompt_format = prompt_format_cls(**prompt_dict[&#34;format&#34;])\n        prompt_config = PromptConfig(**prompt_dict.get(&#34;config&#34;, {}))\n\n        with open(prompt_provider_file, &#34;rb&#34;) as f:\n            prompt_provider_weights = torch.load(f)\n        prompt_provider = TensorPromptProvider.from_pretrained(prompt_provider_weights)\n\n        prompt = cls(format=prompt_format, provider=prompt_provider, config=prompt_config)\n        prompt.ctx.is_initialized = True\n\n        return prompt\n&#39;, &#39;line_start&#39;: 205}, &#39;children&#39;: [], &#39;attributes&#39;: [], &#39;methods&#39;: [], &#39;functions&#39;: [], &#39;modules&#39;: [], &#39;classes&#39;: [], &#39;signature&#39;: {&#39;parameters&#39;: [{&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;cls&#39;}, {&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;pretrained_prompt_name_or_path&#39;, &#39;annotation&#39;: &#39;Union[str, os.PathLike]&#39;}, {&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;as_safe&#39;, &#39;annotation&#39;: &#39;bool&#39;, &#39;default&#39;: &#39;False&#39;}], &#39;return_annotation&#39;: &#39;Prompt&#39;}}, {&#39;name&#39;: &#39;patch&#39;, &#39;path&#39;: &#39;ruprompts.prompt.Prompt.patch&#39;, &#39;category&#39;: &#39;method&#39;, &#39;file_path&#39;: &#39;/home/runner/work/ru-prompts/ru-prompts/ruprompts/prompt.py&#39;, &#39;relative_file_path&#39;: &#39;ruprompts/prompt.py&#39;, &#39;properties&#39;: [], &#39;parent_path&#39;: &#39;ruprompts.prompt.Prompt&#39;, &#39;has_contents&#39;: True, &#39;docstring&#39;: &#39;Applies the prompt to model and tokenizer.\n\nInjects the prompt by adding special prompt tokens to the tokenizer\nand switching input embedding layer of the model with prompt embedding\nlayer that inserts embeddings from prompt provider into the positions\ndefined by special tokens specified in prompt format.\n\nArgs:\n    model: Model to patch.\n    tokenizer: Tokenizer to patch.&#39;, &#39;docstring_sections&#39;: [{&#39;type&#39;: &#39;markdown&#39;, &#39;value&#39;: &#39;Applies the prompt to model and tokenizer.\n\nInjects the prompt by adding special prompt tokens to the tokenizer\nand switching input embedding layer of the model with prompt embedding\nlayer that inserts embeddings from prompt provider into the positions\ndefined by special tokens specified in prompt format.\n&#39;}, {&#39;type&#39;: &#39;parameters&#39;, &#39;value&#39;: [{&#39;description&#39;: &#39;Model to patch.&#39;, &#39;annotation&#39;: &#39;PreTrainedModel&#39;, &#39;name&#39;: &#39;model&#39;, &#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;default&#39;: &#39;&#39;, &#39;is_optional&#39;: False, &#39;is_required&#39;: True, &#39;is_args&#39;: False, &#39;is_kwargs&#39;: False}, {&#39;description&#39;: &#39;Tokenizer to patch.&#39;, &#39;annotation&#39;: &#39;PreTrainedTokenizerBase&#39;, &#39;name&#39;: &#39;tokenizer&#39;, &#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;default&#39;: &#39;&#39;, &#39;is_optional&#39;: False, &#39;is_required&#39;: True, &#39;is_args&#39;: False, &#39;is_kwargs&#39;: False}]}], &#39;source&#39;: {&#39;code&#39;: &#39;    def patch(self, model: PreTrainedModel, tokenizer: PreTrainedTokenizerBase):\n        &#34;&#34;&#34;Applies the prompt to model and tokenizer.\n\n        Injects the prompt by adding special prompt tokens to the tokenizer\n        and switching input embedding layer of the model with prompt embedding\n        layer that inserts embeddings from prompt provider into the positions\n        defined by special tokens specified in prompt format.\n\n        Args:\n            model: Model to patch.\n            tokenizer: Tokenizer to patch.\n        &#34;&#34;&#34;\n\n        self.initialize(model, tokenizer)\n        self.attach(model, tokenizer)\n&#39;, &#39;line_start&#39;: 94}, &#39;children&#39;: [], &#39;attributes&#39;: [], &#39;methods&#39;: [], &#39;functions&#39;: [], &#39;modules&#39;: [], &#39;classes&#39;: [], &#39;signature&#39;: {&#39;parameters&#39;: [{&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;self&#39;}, {&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;model&#39;, &#39;annotation&#39;: &#39;PreTrainedModel&#39;}, {&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;tokenizer&#39;, &#39;annotation&#39;: &#39;PreTrainedTokenizerBase&#39;}]}}, {&#39;name&#39;: &#39;save_pretrained&#39;, &#39;path&#39;: &#39;ruprompts.prompt.Prompt.save_pretrained&#39;, &#39;category&#39;: &#39;method&#39;, &#39;file_path&#39;: &#39;/home/runner/work/ru-prompts/ru-prompts/ruprompts/prompt.py&#39;, &#39;relative_file_path&#39;: &#39;ruprompts/prompt.py&#39;, &#39;properties&#39;: [], &#39;parent_path&#39;: &#39;ruprompts.prompt.Prompt&#39;, &#39;has_contents&#39;: True, &#39;docstring&#39;: &#34;Save a prompt to a directory, so that it can be re-loaded using the\n:c:`ruprompts.prompt.Prompt.from_pretrained` class method.\n\nArgs:\n    save_directory: Directory to which to save. Will be created if it doesn&#39;t exist.\n    push_to_hub: Whether or not to push your model to the Hugging Face model hub after saving it.\n\n    !!! warning\n\n        Using `push_to_hub=True` will synchronize the repository you are pushing to with\n        `save_directory`, which requires `save_directory` to be a local clone of the repo you are\n        pushing to if it&#39;s an existing folder. Pass along `temp_dir=True` to use a temporary directory\n        instead.\n\n    **kwargs: Additional key word arguments passed along to the\n        [`PushToHubMixin.push_to_hub`](https://huggingface.co/docs/transformers/main_classes/model#transformers.file_utils.PushToHubMixin.push_to_hub) method.&#34;, &#39;docstring_sections&#39;: [{&#39;type&#39;: &#39;markdown&#39;, &#39;value&#39;: &#39;Save a prompt to a directory, so that it can be re-loaded using the\n:c:`ruprompts.prompt.Prompt.from_pretrained` class method.\n&#39;}, {&#39;type&#39;: &#39;parameters&#39;, &#39;value&#39;: [{&#39;description&#39;: &#34;Directory to which to save. Will be created if it doesn&#39;t exist.&#34;, &#39;annotation&#39;: &#39;Union[str, os.PathLike]&#39;, &#39;name&#39;: &#39;save_directory&#39;, &#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;default&#39;: &#39;&#39;, &#39;is_optional&#39;: False, &#39;is_required&#39;: True, &#39;is_args&#39;: False, &#39;is_kwargs&#39;: False}, {&#39;description&#39;: &#39;Whether or not to push your model to the Hugging Face model hub after saving it.\n&#39;, &#39;annotation&#39;: &#39;bool&#39;, &#39;name&#39;: &#39;push_to_hub&#39;, &#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;default&#39;: &#39;False&#39;, &#39;is_optional&#39;: True, &#39;is_required&#39;: False, &#39;is_args&#39;: False, &#39;is_kwargs&#39;: False}, {&#39;description&#39;: &#39;Additional key word arguments passed along to the\n[`PushToHubMixin.push_to_hub`](https://huggingface.co/docs/transformers/main_classes/model#transformers.file_utils.PushToHubMixin.push_to_hub) method.&#39;, &#39;annotation&#39;: &#39;&#39;, &#39;name&#39;: &#39;**kwargs&#39;, &#39;kind&#39;: &#39;VAR_KEYWORD&#39;, &#39;default&#39;: &#39;{}&#39;, &#39;is_optional&#39;: False, &#39;is_required&#39;: True, &#39;is_args&#39;: False, &#39;is_kwargs&#39;: True}]}], &#39;source&#39;: {&#39;code&#39;: &#39;    def save_pretrained(\n        self, save_directory: Union[str, os.PathLike], push_to_hub: bool = False, **kwargs\n    ):\n        &#34;&#34;&#34;\n        Save a prompt to a directory, so that it can be re-loaded using the\n        :c:`ruprompts.prompt.Prompt.from_pretrained` class method.\n\n        Args:\n            save_directory: Directory to which to save. Will be created if it doesn\&#39;t exist.\n            push_to_hub: Whether or not to push your model to the Hugging Face model hub after saving it.\n\n            !!! warning\n\n                Using `push_to_hub=True` will synchronize the repository you are pushing to with\n                `save_directory`, which requires `save_directory` to be a local clone of the repo you are\n                pushing to if it\&#39;s an existing folder. Pass along `temp_dir=True` to use a temporary directory\n                instead.\n\n            **kwargs: Additional key word arguments passed along to the\n                [`PushToHubMixin.push_to_hub`](https://huggingface.co/docs/transformers/main_classes/model#transformers.file_utils.PushToHubMixin.push_to_hub) method.\n        &#34;&#34;&#34;\n        if not self.is_initialized:\n            raise UserWarning(&#34;Prompt should be initialized to be saved&#34;)\n\n        if os.path.isfile(save_directory):\n            raise UserWarning(&#34;save_directory should be a directory, got file instead&#34;)\n\n        if push_to_hub:\n            commit_message = kwargs.pop(&#34;commit_message&#34;, None)\n            repo = self._create_or_get_repo(save_directory, **kwargs)\n\n        os.makedirs(save_directory, exist_ok=True)\n\n        output_prompt_provider_file = os.path.join(save_directory, PROMPT_PROVIDER_FILE_NAME)\n        self.provider.save_pretrained(output_prompt_provider_file)\n\n        output_prompt_file = os.path.join(save_directory, PROMPT_FILE_NAME)\n        json.dump(self.as_dict(), open(output_prompt_file, &#34;w&#34;, encoding=&#34;utf-8&#34;))\n\n        if push_to_hub:\n            self._push_to_hub(repo, commit_message=commit_message)\n&#39;, &#39;line_start&#39;: 163}, &#39;children&#39;: [], &#39;attributes&#39;: [], &#39;methods&#39;: [], &#39;functions&#39;: [], &#39;modules&#39;: [], &#39;classes&#39;: [], &#39;signature&#39;: {&#39;parameters&#39;: [{&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;self&#39;}, {&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;save_directory&#39;, &#39;annotation&#39;: &#39;Union[str, os.PathLike]&#39;}, {&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;push_to_hub&#39;, &#39;annotation&#39;: &#39;bool&#39;, &#39;default&#39;: &#39;False&#39;}, {&#39;kind&#39;: &#39;VAR_KEYWORD&#39;, &#39;name&#39;: &#39;kwargs&#39;}]}}] -->
+        <!-- </code> -->
+
+
+</h2>
+
+    <div class="doc doc-contents first">
+
+      <p>Core class combining <a href="../prompt_format/#ruprompts.prompt_format.PromptFormat"><code>PromptFormat</code></a> and <a href="../prompt_provider/#ruprompts.prompt_provider.BasePromptProvider"><code>BasePromptProvider</code></a>.</p>
+<p>Implements saving/loading methods and HF hub integration.</p>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">p</span> <span class="o">=</span> <span class="n">Prompt</span><span class="p">(</span><span class="n">PromptFormat</span><span class="p">(</span><span class="s2">&quot;&lt;P*50&gt;&quot;</span><span class="p">),</span> <span class="n">TensorPromptProvider</span><span class="p">())</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">p</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">tokenizer</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">trainer</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">p</span><span class="o">.</span><span class="n">save_pretrained</span><span class="p">(</span><span class="s2">&quot;./checkpoint/path&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">p</span><span class="o">.</span><span class="n">push_to_hub</span><span class="p">(</span><span class="s2">&quot;konodyuk/prompt_rugpt3large_detox&quot;</span><span class="p">)</span>
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">p</span> <span class="o">=</span> <span class="n">Prompt</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s2">&quot;./checkpoint/path&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">p</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">tokenizer</span><span class="p">)</span>
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">p</span><span class="p">(</span><span class="n">toxic</span><span class="o">=</span><span class="s2">&quot;...&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">toxic</span><span class="o">=</span><span class="s2">&quot;...&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">assert</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span>
+</code></pre></div>
+    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">p</span> <span class="o">=</span> <span class="n">Prompt</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s2">&quot;konodyuk/prompt_rugpt3large_detox&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ppln</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="s2">&quot;text-generation&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="n">tokenizer</span><span class="o">=</span><span class="n">tokenizer</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ppln_prompt</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="s2">&quot;text-generation-with-prompt&quot;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="n">p</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="n">tokenizer</span><span class="o">=</span><span class="n">tokenizer</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">ppln</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="s2">&quot;text&quot;</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">ppln_prompt</span><span class="p">(</span><span class="s2">&quot;text&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">assert</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span>
+</code></pre></div>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>format</code></td>
+        <td>
+        <p><a href="../prompt_format/#ruprompts.prompt_format.BasePromptFormat"><code>BasePromptFormat</code></a></p>
+ </td>
+        <td><p>Format used to format text for training and inference
+and for adding special tokens to the tokenizer.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>provider</code></td>
+        <td>
+        <p><a href="../prompt_provider/#ruprompts.prompt_provider.BasePromptProvider"><code>BasePromptProvider</code></a></p>
+ </td>
+        <td><p>Provider used to insert trainable embeddings
+to the positions defined by prompt format.</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 class="doc doc-heading" id="ruprompts.prompt.Prompt.from_pretrained">
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-classmethod"><code>classmethod</code></small>
+  </span>
+
+        <div class="doc doc-name">
+        <code>from_pretrained</code>
+        </div>
+
+        <div class="doc doc-signature">
+<code class="highlight language-python"><span class="p">(</span><span class="n">pretrained_prompt_name_or_path</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">PathLike</span><span class="p">],</span> <span class="n">as_safe</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Prompt</span></code>        </div>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Loads a pretrained prompt from disk or HF Hub.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>pretrained_prompt_name_or_path</code></td>
+        <td>
+        <code>Union[str, os.PathLike]</code>
+ </td>
+        <td><p>Either a HF Hub identifier (<code>konodyuk/prompt_rugpt3large_detox</code>)
+or path to a directory containing prompt saved with <a href="#ruprompts.prompt.Prompt.save_pretrained"><code>save_pretrained</code></a>.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>as_safe</code></td>
+        <td>
+        <code>bool</code>
+ </td>
+        <td><p>Whether to load prompt format as <a href="../prompt_format/#ruprompts.prompt_format.PromptFormat"><code>PromptFormat</code></a>
+or <a href="../prompt_format/#ruprompts.prompt_format.PromptFormatSafe"><code>PromptFormatSafe</code></a>.</p></td>
+        <td><code>False</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>
+        <code>Prompt</code>
+ </td>
+      <td><h4 id="ruprompts.prompt.Prompt.from_pretrained--prompt-pretrained-prompt-instance"><a href="#ruprompts.prompt.Prompt"><code>Prompt</code></a>: Pretrained prompt instance.</h4></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>ruprompts/prompt.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">from_pretrained</span><span class="p">(</span>
+    <span class="bp">cls</span><span class="p">,</span> <span class="n">pretrained_prompt_name_or_path</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">PathLike</span><span class="p">],</span> <span class="n">as_safe</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Prompt&quot;</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Loads a pretrained prompt from disk or HF Hub.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        pretrained_prompt_name_or_path: Either a HF Hub identifier (`konodyuk/prompt_rugpt3large_detox`)</span>
+<span class="sd">            or path to a directory containing prompt saved with :s:`ruprompts.prompt.Prompt.save_pretrained`.</span>
+<span class="sd">        as_safe: Whether to load prompt format as :s:`ruprompts.prompt_format.PromptFormat`</span>
+<span class="sd">            or :s:`ruprompts.prompt_format.PromptFormatSafe`.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        # !s!`ruprompts.prompt.Prompt`: Pretrained prompt instance.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">pretrained_prompt_name_or_path</span><span class="p">):</span>
+        <span class="n">prompt_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pretrained_prompt_name_or_path</span><span class="p">,</span> <span class="n">PROMPT_FILE_NAME</span><span class="p">)</span>
+        <span class="n">prompt_provider_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+            <span class="n">pretrained_prompt_name_or_path</span><span class="p">,</span> <span class="n">PROMPT_PROVIDER_FILE_NAME</span>
+        <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">prompt_file</span> <span class="o">=</span> <span class="n">_resolve_file</span><span class="p">(</span><span class="n">pretrained_prompt_name_or_path</span><span class="p">,</span> <span class="n">PROMPT_FILE_NAME</span><span class="p">)</span>
+        <span class="n">prompt_provider_file</span> <span class="o">=</span> <span class="n">_resolve_file</span><span class="p">(</span>
+            <span class="n">pretrained_prompt_name_or_path</span><span class="p">,</span> <span class="n">PROMPT_PROVIDER_FILE_NAME</span>
+        <span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">prompt_file</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">prompt_dict</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+    <span class="n">prompt_format_cls</span> <span class="o">=</span> <span class="n">PromptFormat</span>
+    <span class="k">if</span> <span class="n">as_safe</span><span class="p">:</span>
+        <span class="n">prompt_format_cls</span> <span class="o">=</span> <span class="n">PromptFormatSafe</span>
+    <span class="n">prompt_format</span> <span class="o">=</span> <span class="n">prompt_format_cls</span><span class="p">(</span><span class="o">**</span><span class="n">prompt_dict</span><span class="p">[</span><span class="s2">&quot;format&quot;</span><span class="p">])</span>
+    <span class="n">prompt_config</span> <span class="o">=</span> <span class="n">PromptConfig</span><span class="p">(</span><span class="o">**</span><span class="n">prompt_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;config&quot;</span><span class="p">,</span> <span class="p">{}))</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">prompt_provider_file</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">prompt_provider_weights</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="n">prompt_provider</span> <span class="o">=</span> <span class="n">TensorPromptProvider</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">prompt_provider_weights</span><span class="p">)</span>
+
+    <span class="n">prompt</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="n">prompt_format</span><span class="p">,</span> <span class="n">provider</span><span class="o">=</span><span class="n">prompt_provider</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">prompt_config</span><span class="p">)</span>
+    <span class="n">prompt</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">is_initialized</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">return</span> <span class="n">prompt</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 class="doc doc-heading" id="ruprompts.prompt.Prompt.patch">
+
+
+        <div class="doc doc-name">
+        <code>patch</code>
+        </div>
+
+        <div class="doc doc-signature">
+<code class="highlight language-python"><span class="p">(</span><span class="n">model</span><span class="p">:</span> <span class="n">PreTrainedModel</span><span class="p">,</span> <span class="n">tokenizer</span><span class="p">:</span> <span class="n">PreTrainedTokenizerBase</span><span class="p">)</span></code>        </div>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Applies the prompt to model and tokenizer.</p>
+<p>Injects the prompt by adding special prompt tokens to the tokenizer
+and switching input embedding layer of the model with prompt embedding
+layer that inserts embeddings from prompt provider into the positions
+defined by special tokens specified in prompt format.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>model</code></td>
+        <td>
+        <code>PreTrainedModel</code>
+ </td>
+        <td><p>Model to patch.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>tokenizer</code></td>
+        <td>
+        <code>PreTrainedTokenizerBase</code>
+ </td>
+        <td><p>Tokenizer to patch.</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>ruprompts/prompt.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">patch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="n">PreTrainedModel</span><span class="p">,</span> <span class="n">tokenizer</span><span class="p">:</span> <span class="n">PreTrainedTokenizerBase</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Applies the prompt to model and tokenizer.</span>
+
+<span class="sd">    Injects the prompt by adding special prompt tokens to the tokenizer</span>
+<span class="sd">    and switching input embedding layer of the model with prompt embedding</span>
+<span class="sd">    layer that inserts embeddings from prompt provider into the positions</span>
+<span class="sd">    defined by special tokens specified in prompt format.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        model: Model to patch.</span>
+<span class="sd">        tokenizer: Tokenizer to patch.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">tokenizer</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">tokenizer</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 class="doc doc-heading" id="ruprompts.prompt.Prompt.save_pretrained">
+
+
+        <div class="doc doc-name">
+        <code>save_pretrained</code>
+        </div>
+
+        <div class="doc doc-signature">
+<code class="highlight language-python"><span class="p">(</span><span class="n">save_directory</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">PathLike</span><span class="p">],</span> <span class="n">push_to_hub</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>        </div>
+
+</h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Save a prompt to a directory, so that it can be re-loaded using the
+<a href="#ruprompts.prompt.Prompt.from_pretrained"><code>Prompt.from_pretrained</code></a> class method.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>save_directory</code></td>
+        <td>
+        <code>Union[str, os.PathLike]</code>
+ </td>
+        <td><p>Directory to which to save. Will be created if it doesn't exist.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>push_to_hub</code></td>
+        <td>
+        <code>bool</code>
+ </td>
+        <td><p>Whether or not to push your model to the Hugging Face model hub after saving it.</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>**kwargs</code></td>
+        <td>
+ </td>
+        <td><p>Additional key word arguments passed along to the
+<a href="https://huggingface.co/docs/transformers/main_classes/model#transformers.file_utils.PushToHubMixin.push_to_hub"><code>PushToHubMixin.push_to_hub</code></a> method.</p></td>
+        <td><code>{}</code></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>ruprompts/prompt.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">save_pretrained</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span> <span class="n">save_directory</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">PathLike</span><span class="p">],</span> <span class="n">push_to_hub</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Save a prompt to a directory, so that it can be re-loaded using the</span>
+<span class="sd">    :c:`ruprompts.prompt.Prompt.from_pretrained` class method.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        save_directory: Directory to which to save. Will be created if it doesn&#39;t exist.</span>
+<span class="sd">        push_to_hub: Whether or not to push your model to the Hugging Face model hub after saving it.</span>
+
+<span class="sd">        !!! warning</span>
+
+<span class="sd">            Using `push_to_hub=True` will synchronize the repository you are pushing to with</span>
+<span class="sd">            `save_directory`, which requires `save_directory` to be a local clone of the repo you are</span>
+<span class="sd">            pushing to if it&#39;s an existing folder. Pass along `temp_dir=True` to use a temporary directory</span>
+<span class="sd">            instead.</span>
+
+<span class="sd">        **kwargs: Additional key word arguments passed along to the</span>
+<span class="sd">            [`PushToHubMixin.push_to_hub`](https://huggingface.co/docs/transformers/main_classes/model#transformers.file_utils.PushToHubMixin.push_to_hub) method.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_initialized</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">UserWarning</span><span class="p">(</span><span class="s2">&quot;Prompt should be initialized to be saved&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">save_directory</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">UserWarning</span><span class="p">(</span><span class="s2">&quot;save_directory should be a directory, got file instead&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">push_to_hub</span><span class="p">:</span>
+        <span class="n">commit_message</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;commit_message&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">repo</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_or_get_repo</span><span class="p">(</span><span class="n">save_directory</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">save_directory</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">output_prompt_provider_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">save_directory</span><span class="p">,</span> <span class="n">PROMPT_PROVIDER_FILE_NAME</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">provider</span><span class="o">.</span><span class="n">save_pretrained</span><span class="p">(</span><span class="n">output_prompt_provider_file</span><span class="p">)</span>
+
+    <span class="n">output_prompt_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">save_directory</span><span class="p">,</span> <span class="n">PROMPT_FILE_NAME</span><span class="p">)</span>
+    <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">as_dict</span><span class="p">(),</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_prompt_file</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">push_to_hub</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_push_to_hub</span><span class="p">(</span><span class="n">repo</span><span class="p">,</span> <span class="n">commit_message</span><span class="o">=</span><span class="n">commit_message</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+
+
+<h2 class="doc doc-heading" id="ruprompts.prompt.MultiPrompt">
+
+        <!-- <code> -->
+
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-class"><code>class</code></small>
+  </span>
+
+            <div class="doc doc-name"><code>ruprompts.prompt.MultiPrompt</code></div>
+              <!-- {&#39;name&#39;: &#39;__init__&#39;, &#39;path&#39;: &#39;ruprompts.prompt.MultiPrompt.__init__&#39;, &#39;category&#39;: &#39;method&#39;, &#39;file_path&#39;: &#39;/home/runner/work/ru-prompts/ru-prompts/ruprompts/prompt.py&#39;, &#39;relative_file_path&#39;: &#39;ruprompts/prompt.py&#39;, &#39;properties&#39;: [&#39;special&#39;], &#39;parent_path&#39;: &#39;ruprompts.prompt.MultiPrompt&#39;, &#39;has_contents&#39;: False, &#39;docstring&#39;: None, &#39;docstring_sections&#39;: [], &#39;source&#39;: {&#39;code&#39;: &#39;    def __init__(self, prompts: Optional[Dict[str, Union[Prompt, str]]] = None):\n        if prompts is None:\n            prompts = {}\n        self.prompts: Dict[str, Prompt] = {}\n\n        self.ctx = PromptContext()\n\n        for key, prompt in prompts.items():\n            self.add_prompt(key=key, prompt=prompt)\n&#39;, &#39;line_start&#39;: 303}, &#39;children&#39;: [], &#39;attributes&#39;: [], &#39;methods&#39;: [], &#39;functions&#39;: [], &#39;modules&#39;: [], &#39;classes&#39;: [], &#39;signature&#39;: {&#39;parameters&#39;: [{&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;self&#39;}, {&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;prompts&#39;, &#39;annotation&#39;: &#39;Optional[Dict[str, Union[ruprompts.prompt.Prompt, str]]]&#39;, &#39;default&#39;: &#39;None&#39;}]}} -->
+                <div class="doc doc-signature">
+<code class="highlight language-python"><span class="p">(</span><span class="n">prompts</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Union</span><span class="p">[</span><span class="n">ruprompts</span><span class="o">.</span><span class="n">prompt</span><span class="o">.</span><span class="n">Prompt</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span></code>                </div>
+          <!-- [{&#39;name&#39;: &#39;__call__&#39;, &#39;path&#39;: &#39;ruprompts.prompt.MultiPrompt.__call__&#39;, &#39;category&#39;: &#39;method&#39;, &#39;file_path&#39;: &#39;/home/runner/work/ru-prompts/ru-prompts/ruprompts/prompt.py&#39;, &#39;relative_file_path&#39;: &#39;ruprompts/prompt.py&#39;, &#39;properties&#39;: [&#39;special&#39;], &#39;parent_path&#39;: &#39;ruprompts.prompt.MultiPrompt&#39;, &#39;has_contents&#39;: False, &#39;docstring&#39;: None, &#39;docstring_sections&#39;: [], &#39;source&#39;: {&#39;code&#39;: &#39;    def __call__(self, key: str, text: Optional[str] = None, **kwargs):\n        if text is not None:\n            kwargs[&#34;text&#34;] = text\n        return self.formats[key](**kwargs)\n&#39;, &#39;line_start&#39;: 327}, &#39;children&#39;: [], &#39;attributes&#39;: [], &#39;methods&#39;: [], &#39;functions&#39;: [], &#39;modules&#39;: [], &#39;classes&#39;: [], &#39;signature&#39;: {&#39;parameters&#39;: [{&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;self&#39;}, {&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;key&#39;, &#39;annotation&#39;: &#39;str&#39;}, {&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;text&#39;, &#39;annotation&#39;: &#39;Optional[str]&#39;, &#39;default&#39;: &#39;None&#39;}, {&#39;kind&#39;: &#39;VAR_KEYWORD&#39;, &#39;name&#39;: &#39;kwargs&#39;}]}}, {&#39;name&#39;: &#39;__init__&#39;, &#39;path&#39;: &#39;ruprompts.prompt.MultiPrompt.__init__&#39;, &#39;category&#39;: &#39;method&#39;, &#39;file_path&#39;: &#39;/home/runner/work/ru-prompts/ru-prompts/ruprompts/prompt.py&#39;, &#39;relative_file_path&#39;: &#39;ruprompts/prompt.py&#39;, &#39;properties&#39;: [&#39;special&#39;], &#39;parent_path&#39;: &#39;ruprompts.prompt.MultiPrompt&#39;, &#39;has_contents&#39;: False, &#39;docstring&#39;: None, &#39;docstring_sections&#39;: [], &#39;source&#39;: {&#39;code&#39;: &#39;    def __init__(self, prompts: Optional[Dict[str, Union[Prompt, str]]] = None):\n        if prompts is None:\n            prompts = {}\n        self.prompts: Dict[str, Prompt] = {}\n\n        self.ctx = PromptContext()\n\n        for key, prompt in prompts.items():\n            self.add_prompt(key=key, prompt=prompt)\n&#39;, &#39;line_start&#39;: 303}, &#39;children&#39;: [], &#39;attributes&#39;: [], &#39;methods&#39;: [], &#39;functions&#39;: [], &#39;modules&#39;: [], &#39;classes&#39;: [], &#39;signature&#39;: {&#39;parameters&#39;: [{&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;self&#39;}, {&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;prompts&#39;, &#39;annotation&#39;: &#39;Optional[Dict[str, Union[ruprompts.prompt.Prompt, str]]]&#39;, &#39;default&#39;: &#39;None&#39;}]}}, {&#39;name&#39;: &#39;add_prompt&#39;, &#39;path&#39;: &#39;ruprompts.prompt.MultiPrompt.add_prompt&#39;, &#39;category&#39;: &#39;method&#39;, &#39;file_path&#39;: &#39;/home/runner/work/ru-prompts/ru-prompts/ruprompts/prompt.py&#39;, &#39;relative_file_path&#39;: &#39;ruprompts/prompt.py&#39;, &#39;properties&#39;: [], &#39;parent_path&#39;: &#39;ruprompts.prompt.MultiPrompt&#39;, &#39;has_contents&#39;: False, &#39;docstring&#39;: None, &#39;docstring_sections&#39;: [], &#39;source&#39;: {&#39;code&#39;: &#39;    def add_prompt(self, key: str, prompt: Union[Prompt, str]):\n        if key in self.prompts:\n            raise UserWarning(f&#34;Prompt with key \&#39;{key}\&#39; is already added&#34;)\n\n        if isinstance(prompt, str):\n            prompt = Prompt.from_pretrained(prompt)\n\n        if self.is_attached and not prompt.is_initialized:\n            prompt.initialize(self.ctx.model, self.ctx.tokenizer)\n\n        prompt.format.set_key(key)\n\n        self.prompts[key] = prompt\n&#39;, &#39;line_start&#39;: 313}, &#39;children&#39;: [], &#39;attributes&#39;: [], &#39;methods&#39;: [], &#39;functions&#39;: [], &#39;modules&#39;: [], &#39;classes&#39;: [], &#39;signature&#39;: {&#39;parameters&#39;: [{&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;self&#39;}, {&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;key&#39;, &#39;annotation&#39;: &#39;str&#39;}, {&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;prompt&#39;, &#39;annotation&#39;: &#39;Union[ruprompts.prompt.Prompt, str]&#39;}]}}, {&#39;name&#39;: &#39;attach&#39;, &#39;path&#39;: &#39;ruprompts.prompt.MultiPrompt.attach&#39;, &#39;category&#39;: &#39;method&#39;, &#39;file_path&#39;: &#39;/home/runner/work/ru-prompts/ru-prompts/ruprompts/prompt.py&#39;, &#39;relative_file_path&#39;: &#39;ruprompts/prompt.py&#39;, &#39;properties&#39;: [], &#39;parent_path&#39;: &#39;ruprompts.prompt.MultiPrompt&#39;, &#39;has_contents&#39;: False, &#39;docstring&#39;: None, &#39;docstring_sections&#39;: [], &#39;source&#39;: {&#39;code&#39;: &#39;    def attach(self, model: PreTrainedModel, tokenizer: PreTrainedTokenizerBase):\n        if self.is_attached:\n            raise UserWarning(&#34;MultiPrompt can be attached only once&#34;)\n\n        if not self.is_initialized:\n            raise UserWarning(&#34;MultiPrompt should be initialized to be attached&#34;)\n\n        for format in self.formats.values():\n            format.add_tokens(tokenizer)\n\n        default_embedding = _extract_default_embedding(model)\n\n        embeddings = []\n        for prompt in self.prompts.values():\n            prompt_embedding_cls = PromptEmbedding\n            if isinstance(prompt.format, PromptFormatSafe):\n                prompt_embedding_cls = PromptEmbeddingSafe\n\n            prompt_token_ids = prompt.format.prompt_token_ids\n            embedding = prompt_embedding_cls(\n                default_embedding,\n                prompt_provider=prompt.provider,\n                prompt_token_ids=prompt_token_ids,\n            )\n\n            embeddings.append(embedding)\n\n        self.ctx.embedding = MultiPromptEmbedding(\n            default_embedding=default_embedding, embeddings=embeddings\n        )\n\n        model.set_input_embeddings(self.ctx.embedding)\n\n        self.ctx.is_attached = True\n&#39;, &#39;line_start&#39;: 340}, &#39;children&#39;: [], &#39;attributes&#39;: [], &#39;methods&#39;: [], &#39;functions&#39;: [], &#39;modules&#39;: [], &#39;classes&#39;: [], &#39;signature&#39;: {&#39;parameters&#39;: [{&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;self&#39;}, {&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;model&#39;, &#39;annotation&#39;: &#39;PreTrainedModel&#39;}, {&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;tokenizer&#39;, &#39;annotation&#39;: &#39;PreTrainedTokenizerBase&#39;}]}}, {&#39;name&#39;: &#39;formats&#39;, &#39;path&#39;: &#39;ruprompts.prompt.MultiPrompt.formats&#39;, &#39;category&#39;: &#39;attribute&#39;, &#39;file_path&#39;: &#39;/home/runner/work/ru-prompts/ru-prompts/ruprompts/prompt.py&#39;, &#39;relative_file_path&#39;: &#39;ruprompts/prompt.py&#39;, &#39;properties&#39;: [&#39;property&#39;, &#39;readonly&#39;], &#39;parent_path&#39;: &#39;ruprompts.prompt.MultiPrompt&#39;, &#39;has_contents&#39;: False, &#39;docstring&#39;: None, &#39;docstring_sections&#39;: [], &#39;source&#39;: {&#39;code&#39;: &#39;    @property\n    def formats(self) -&gt; Dict[str, BasePromptFormat]:\n        return {key: prompt.format for key, prompt in self.prompts.items()}\n&#39;, &#39;line_start&#39;: 386}, &#39;children&#39;: [], &#39;attributes&#39;: [], &#39;methods&#39;: [], &#39;functions&#39;: [], &#39;modules&#39;: [], &#39;classes&#39;: [], &#39;type&#39;: &#39;Dict[str, ruprompts.prompt_format.BasePromptFormat]&#39;}, {&#39;name&#39;: &#39;initialize&#39;, &#39;path&#39;: &#39;ruprompts.prompt.MultiPrompt.initialize&#39;, &#39;category&#39;: &#39;method&#39;, &#39;file_path&#39;: &#39;/home/runner/work/ru-prompts/ru-prompts/ruprompts/prompt.py&#39;, &#39;relative_file_path&#39;: &#39;ruprompts/prompt.py&#39;, &#39;properties&#39;: [], &#39;parent_path&#39;: &#39;ruprompts.prompt.MultiPrompt&#39;, &#39;has_contents&#39;: False, &#39;docstring&#39;: None, &#39;docstring_sections&#39;: [], &#39;source&#39;: {&#39;code&#39;: &#39;    def initialize(self, model: PreTrainedModel, tokenizer: PreTrainedTokenizerBase):\n        for prompt in self.prompts.values():\n            prompt.initialize(model, tokenizer)\n&#39;, &#39;line_start&#39;: 336}, &#39;children&#39;: [], &#39;attributes&#39;: [], &#39;methods&#39;: [], &#39;functions&#39;: [], &#39;modules&#39;: [], &#39;classes&#39;: [], &#39;signature&#39;: {&#39;parameters&#39;: [{&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;self&#39;}, {&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;model&#39;, &#39;annotation&#39;: &#39;PreTrainedModel&#39;}, {&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;tokenizer&#39;, &#39;annotation&#39;: &#39;PreTrainedTokenizerBase&#39;}]}}, {&#39;name&#39;: &#39;is_attached&#39;, &#39;path&#39;: &#39;ruprompts.prompt.MultiPrompt.is_attached&#39;, &#39;category&#39;: &#39;attribute&#39;, &#39;file_path&#39;: &#39;/home/runner/work/ru-prompts/ru-prompts/ruprompts/prompt.py&#39;, &#39;relative_file_path&#39;: &#39;ruprompts/prompt.py&#39;, &#39;properties&#39;: [&#39;property&#39;, &#39;readonly&#39;], &#39;parent_path&#39;: &#39;ruprompts.prompt.MultiPrompt&#39;, &#39;has_contents&#39;: False, &#39;docstring&#39;: None, &#39;docstring_sections&#39;: [], &#39;source&#39;: {&#39;code&#39;: &#39;    @property\n    def is_attached(self) -&gt; bool:\n        return self.ctx.is_attached\n&#39;, &#39;line_start&#39;: 382}, &#39;children&#39;: [], &#39;attributes&#39;: [], &#39;methods&#39;: [], &#39;functions&#39;: [], &#39;modules&#39;: [], &#39;classes&#39;: [], &#39;type&#39;: &#39;bool&#39;}, {&#39;name&#39;: &#39;is_initialized&#39;, &#39;path&#39;: &#39;ruprompts.prompt.MultiPrompt.is_initialized&#39;, &#39;category&#39;: &#39;attribute&#39;, &#39;file_path&#39;: &#39;/home/runner/work/ru-prompts/ru-prompts/ruprompts/prompt.py&#39;, &#39;relative_file_path&#39;: &#39;ruprompts/prompt.py&#39;, &#39;properties&#39;: [&#39;property&#39;, &#39;readonly&#39;], &#39;parent_path&#39;: &#39;ruprompts.prompt.MultiPrompt&#39;, &#39;has_contents&#39;: False, &#39;docstring&#39;: None, &#39;docstring_sections&#39;: [], &#39;source&#39;: {&#39;code&#39;: &#39;    @property\n    def is_initialized(self) -&gt; bool:\n        for prompt in self.prompts.values():\n            if not prompt.is_initialized:\n                return False\n        return True\n&#39;, &#39;line_start&#39;: 375}, &#39;children&#39;: [], &#39;attributes&#39;: [], &#39;methods&#39;: [], &#39;functions&#39;: [], &#39;modules&#39;: [], &#39;classes&#39;: [], &#39;type&#39;: &#39;bool&#39;}, {&#39;name&#39;: &#39;patch&#39;, &#39;path&#39;: &#39;ruprompts.prompt.MultiPrompt.patch&#39;, &#39;category&#39;: &#39;method&#39;, &#39;file_path&#39;: &#39;/home/runner/work/ru-prompts/ru-prompts/ruprompts/prompt.py&#39;, &#39;relative_file_path&#39;: &#39;ruprompts/prompt.py&#39;, &#39;properties&#39;: [], &#39;parent_path&#39;: &#39;ruprompts.prompt.MultiPrompt&#39;, &#39;has_contents&#39;: False, &#39;docstring&#39;: None, &#39;docstring_sections&#39;: [], &#39;source&#39;: {&#39;code&#39;: &#39;    def patch(self, model: PreTrainedModel, tokenizer: PreTrainedTokenizerBase):\n        self.initialize(model, tokenizer)\n        self.attach(model, tokenizer)\n&#39;, &#39;line_start&#39;: 332}, &#39;children&#39;: [], &#39;attributes&#39;: [], &#39;methods&#39;: [], &#39;functions&#39;: [], &#39;modules&#39;: [], &#39;classes&#39;: [], &#39;signature&#39;: {&#39;parameters&#39;: [{&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;self&#39;}, {&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;model&#39;, &#39;annotation&#39;: &#39;PreTrainedModel&#39;}, {&#39;kind&#39;: &#39;POSITIONAL_OR_KEYWORD&#39;, &#39;name&#39;: &#39;tokenizer&#39;, &#39;annotation&#39;: &#39;PreTrainedTokenizerBase&#39;}]}}, {&#39;name&#39;: &#39;providers&#39;, &#39;path&#39;: &#39;ruprompts.prompt.MultiPrompt.providers&#39;, &#39;category&#39;: &#39;attribute&#39;, &#39;file_path&#39;: &#39;/home/runner/work/ru-prompts/ru-prompts/ruprompts/prompt.py&#39;, &#39;relative_file_path&#39;: &#39;ruprompts/prompt.py&#39;, &#39;properties&#39;: [&#39;property&#39;, &#39;readonly&#39;], &#39;parent_path&#39;: &#39;ruprompts.prompt.MultiPrompt&#39;, &#39;has_contents&#39;: False, &#39;docstring&#39;: None, &#39;docstring_sections&#39;: [], &#39;source&#39;: {&#39;code&#39;: &#39;    @property\n    def providers(self) -&gt; Dict[str, BasePromptProvider]:\n        return {key: prompt.provider for key, prompt in self.prompts.items()}\n&#39;, &#39;line_start&#39;: 390}, &#39;children&#39;: [], &#39;attributes&#39;: [], &#39;methods&#39;: [], &#39;functions&#39;: [], &#39;modules&#39;: [], &#39;classes&#39;: [], &#39;type&#39;: &#39;Dict[str, ruprompts.prompt_provider.BasePromptProvider]&#39;}] -->
+        <!-- </code> -->
+
+
+</h2>
+
+    <div class="doc doc-contents first">
+
+      <p>Implements serving multiple prompts with one model.</p>
+<p>Receives a dict of pretrained prompts with string keys.
+These keys are used to switch formats.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>prompts</code></td>
+        <td>
+        <p>dict with string keys and <a href="#ruprompts.prompt.Prompt"><code>Prompt</code></a> values</p>
+ </td>
+        <td></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">mp</span> <span class="o">=</span> <span class="n">MultiPrompt</span><span class="p">({</span>
+<span class="o">...</span>     <span class="s2">&quot;key1&quot;</span><span class="p">:</span> <span class="s2">&quot;path/to/pretrained/prompt1&quot;</span><span class="p">,</span>
+<span class="o">...</span>     <span class="s2">&quot;key2&quot;</span><span class="p">:</span> <span class="s2">&quot;hfhub/prompt_id&quot;</span><span class="p">,</span>
+<span class="o">...</span>     <span class="s2">&quot;key3&quot;</span><span class="p">:</span> <span class="n">Prompt</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s2">&quot;another_hfhub/prompt_id&quot;</span><span class="p">),</span>
+<span class="o">...</span>     <span class="s1">&#39;key4&quot;: Prompt.from_pretrained(&quot;/path/to/another/checkpoint&quot;)</span>
+<span class="o">...</span> <span class="p">})</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">mp</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">tokenizer</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ppln</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="s2">&quot;text-generation&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="n">tokenizer</span><span class="o">=</span><span class="n">tokenizer</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ppln</span><span class="p">(</span><span class="n">mp</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;key2&quot;</span><span class="p">,</span> <span class="s2">&quot;Text for second prompt&quot;</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ppln</span><span class="p">(</span><span class="n">mp</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;key3&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Text for third prompt&quot;</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ppln</span><span class="p">(</span><span class="n">mp</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;key4&quot;</span><span class="p">,</span> <span class="n">keyword</span><span class="o">=</span><span class="s2">&quot;Keyword for fourth prompt&quot;</span><span class="p">))</span>
+</code></pre></div>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../../getting-started/installation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Installation" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Installation
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../prompt_format/" class="md-footer__link md-footer__link--next" aria-label="Next: Prompt Format" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Prompt Format
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.indexes", "search.suggest", "search.highlight", "content.code.annotate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e1a181d9.min.js"></script>
+      
+    
+  </body>
+</html>

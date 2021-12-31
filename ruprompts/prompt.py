@@ -44,7 +44,7 @@ class PromptContext:
 
 @typechecked
 class Prompt(PushToHubMixin):
-    """Core class combining :s:`ruprompts.prompt_format.PromptFormat` and :s:`ruprompts.prompt_provider.PromptProvider`.
+    """Core class combining :s:`ruprompts.prompt_format.PromptFormat` and :s:`ruprompts.prompt_provider.BasePromptProvider`.
 
     Implements saving/loading methods and HF hub integration.
 

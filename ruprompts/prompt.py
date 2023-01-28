@@ -6,7 +6,7 @@ from typing import Dict, Optional, Union
 import torch
 from torch import nn
 from transformers import AutoModel, AutoTokenizer, PreTrainedModel, PreTrainedTokenizerBase
-from transformers.file_utils import PushToHubMixin, cached_path, hf_bucket_url
+from transformers.utils.hub import PushToHubMixin, cached_file
 from typeguard import typechecked
 
 from ruprompts.prompt_embedding import (
@@ -393,15 +393,9 @@ class MultiPrompt:
 
 
 def _resolve_file(prompt_id: str, filename: str):
-    archive_file = hf_bucket_url(
-        model_id=prompt_id,
+    resolved_archive_file = cached_file(
+        prompt_id,
         filename=filename,
-        revision=None,
-        mirror=None,
-    )
-
-    resolved_archive_file = cached_path(
-        archive_file,
         cache_dir=None,
         force_download=False,
         proxies=None,

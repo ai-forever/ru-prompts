@@ -62,7 +62,6 @@ class TextGenerationWithPromptPipeline(PromptPipeline, TextGenerationPipeline):
         "max_new_tokens": 100,
         "eos_token_id": 0,
         "return_full_text": True,
-        "padding": False,
         "do_sample": True,
     }
 
@@ -107,7 +106,6 @@ class Text2TextGenerationWithPromptPipeline(PromptPipeline, TextGenerationPipeli
         "max_new_tokens": 100,
         "eos_token_id": 0,
         "return_full_text": False,
-        "padding": False,
         "do_sample": True,
     }
 

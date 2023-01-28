@@ -123,9 +123,10 @@ SUPPORTED_TASKS["text2text-generation-with-prompt"] = {
     "tf": (),
     "default": {
         "model": {
-            "pt": "sberbank-ai/rugpt3large_based_on_gpt2",
+            "pt": ("sberbank-ai/rugpt3large_based_on_gpt2", "aa2b602"),
         },
     },
+    "type": "text",
 }
 SUPPORTED_TASKS["text-generation-with-prompt"] = {
     "impl": TextGenerationWithPromptPipeline,
@@ -133,8 +134,9 @@ SUPPORTED_TASKS["text-generation-with-prompt"] = {
     "tf": (),
     "default": {
         "model": {
-            "pt": "sberbank-ai/rugpt3large_based_on_gpt2",
+            "pt": ("sberbank-ai/rugpt3large_based_on_gpt2", "aa2b602"),
         },
     },
+    "type": "text",
 }
 # SUPPORTED_TASKS["text-classification-with-prompt"] = {}

@@ -24,7 +24,7 @@ Installation from source may be your option if you wish to have direct access to
 
 In this case clone the repo and install the package in editable mode:
 ```sh
-git clone https://github.com/sberbank-ai/ru-prompts
+git clone https://github.com/ai-forever/ru-prompts
 cd ru-prompts
 pip install -e .[hydra]
 ```
@@ -32,7 +32,7 @@ pip install -e .[hydra]
 ### Poetry
 Since **ruPrompts** is built with [Poetry](https://python-poetry.org), you may prefer to install it in virtual environment:
 ```sh
-git clone https://github.com/sberbank-ai/ru-prompts
+git clone https://github.com/ai-forever/ru-prompts
 cd ru-prompts
 pip install poetry
 poetry install -E hydra

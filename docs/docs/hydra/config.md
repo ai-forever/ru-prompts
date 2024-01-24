@@ -11,9 +11,9 @@ Our config is located in `conf/` folder and consists of the following groups:
 **Description:** Defined the name of pretrained model and tokenizer.
 
 #### Options
-- **rugpt3small** - loads [`sberbank-ai/rugpt3small_based_on_gpt2`](https://huggingface.co/sberbank-ai/rugpt3small_based_on_gpt2).
-- **rugpt3medium** - loads [`sberbank-ai/rugpt3medium_based_on_gpt2`](https://huggingface.co/sberbank-ai/rugpt3medium_based_on_gpt2).
-- **rugpt3large** - loads [`sberbank-ai/rugpt3large_based_on_gpt2`](https://huggingface.co/sberbank-ai/rugpt3large_based_on_gpt2).
+- **rugpt3small** - loads [`ai-forever/rugpt3small_based_on_gpt2`](https://huggingface.co/ai-forever/rugpt3small_based_on_gpt2).
+- **rugpt3medium** - loads [`ai-forever/rugpt3medium_based_on_gpt2`](https://huggingface.co/ai-forever/rugpt3medium_based_on_gpt2).
+- **rugpt3large** - loads [`ai-forever/rugpt3large_based_on_gpt2`](https://huggingface.co/ai-forever/rugpt3large_based_on_gpt2).
 
 #### Option format
 ```yaml

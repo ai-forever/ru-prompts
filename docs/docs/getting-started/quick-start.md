@@ -40,7 +40,7 @@ If you run these code snippets, you'll notice that a separate model is created e
 ```python
 from transformers import GPT2LMHeadModel, AutoTokenizer
 
-model_id = "sberbank-ai/rugpt3large_based_on_gpt2"
+model_id = "ai-forever/rugpt3large_based_on_gpt2"
 model = GPT2LMHeadModel.from_pretrained(model_id)
 tokenizer = AutoTokenizer.from_pretrained(model_id)
 

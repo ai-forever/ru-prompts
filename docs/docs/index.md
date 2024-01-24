@@ -15,7 +15,7 @@ You can currently use **ruPrompts** for text-to-text tasks, such as summarizatio
 - **Integration with [HF Transformers](https://huggingface.co/transformers/)**, support for all models with LM head
 - **Integration with [HF Hub](https://huggingface.co/models/)** for sharing and loading pretrained prompts
 - **CLI** and configuration system powered by **[Hydra](https://hydra.cc)**
-- **[Pretrained prompts](pretrained/index.md)** for **[ruGPT-3](https://huggingface.co/sberbank-ai/rugpt3large_based_on_gpt2)**
+- **[Pretrained prompts](pretrained/index.md)** for **[ruGPT-3](https://huggingface.co/ai-forever/rugpt3large_based_on_gpt2)**
 
 ## Installation
 

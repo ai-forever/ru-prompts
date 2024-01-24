@@ -5,9 +5,9 @@ description = "Fast prompt tuning framework for large language models"
 authors = ["Sber AI <nekonodyuk@sberbank.ru>"]
 license = "Apache 2.0"
 readme = "README.md"
-homepage = "https://sberbank-ai.github.io/ru-prompts"
-repository = "https://github.com/sberbank-ai/ru-prompts"
-documentation = "https://sberbank-ai.github.io/ru-prompts"
+homepage = "https://ai-forever.github.io/ru-prompts"
+repository = "https://github.com/ai-forever/ru-prompts"
+documentation = "https://ai-forever.github.io/ru-prompts"
 packages = [
     { include = "ruprompts" },
     { include = "conf" }
@@ -19,7 +19,7 @@ python = "^3.7"
 transformers = "^4.6.0"
 typeguard = "^2.13.3"
 typing-extensions = "^4.0.1"
-torch = "^1.10.0"
+torch = ">=1.10.0"
 hydra-core = {version = "^1.1.0", optional = true}
 datasets = {version = "^1.16.1", optional = true}
 torchtyping = "^0.1.4"

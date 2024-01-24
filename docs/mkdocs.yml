@@ -1,6 +1,6 @@
 site_name: ruPrompts
-repo_url: https://github.com/sberbank-ai/ru-prompts
-repo_name: sberbank-ai/ru-prompts
+repo_url: https://github.com/ai-forever/ru-prompts
+repo_name: ai-forever/ru-prompts
 edit_uri: ""
 theme:
   name: material
@@ -73,8 +73,8 @@ nav:
   - Home: "index.md"
   - Docs:
       - Getting Started:
-        - Quick Start: "getting-started/quick-start.md"
-        - Installation: "getting-started/installation.md"
+          - Quick Start: "getting-started/quick-start.md"
+          - Installation: "getting-started/installation.md"
         # - Walkthrough: "getting-started/walkthrough.md"
       #   - How It Works: "getting-started/how-it-works.md"
       # - User Guide:
@@ -82,16 +82,16 @@ nav:
       #   - Uploading to HF Hub: "guide/hub.md"
       #   - Inference: "guide/inference.md"
       - Python API:
-        - Prompt: "api/prompt.md"
-        - Prompt Format: "api/prompt_format.md"
-        - Prompt Provider: "api/prompt_provider.md"
-        - Callbacks: "api/callbacks.md"
-        - Pipelines: "api/pipelines.md"
-        - Preprocessing: "api/preprocessing.md"
+          - Prompt: "api/prompt.md"
+          - Prompt Format: "api/prompt_format.md"
+          - Prompt Provider: "api/prompt_provider.md"
+          - Callbacks: "api/callbacks.md"
+          - Pipelines: "api/pipelines.md"
+          - Preprocessing: "api/preprocessing.md"
       - Hydra API:
-        - "hydra/index.md"
-        - Config Structure: "hydra/config.md"
-        - Using CLI: "hydra/cli.md"
+          - "hydra/index.md"
+          - Config Structure: "hydra/config.md"
+          - Using CLI: "hydra/cli.md"
   - Tutorials: "tutorials.md"
   - Pretrained Prompts:
-    - "pretrained/index.md"
+      - "pretrained/index.md"

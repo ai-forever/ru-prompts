@@ -1,6 +1,6 @@
 from typing import Dict, Union
 
-from transformers.models.auto.modeling_auto import AutoModelWithLMHead
+from transformers.models.auto.modeling_auto import AutoModelForCausalLM, AutoModelForSeq2SeqLM
 from transformers.pipelines import SUPPORTED_TASKS, TextGenerationPipeline
 
 from ruprompts.prompt import Prompt
@@ -119,22 +119,22 @@ class Text2TextGenerationWithPromptPipeline(PromptPipeline, TextGenerationPipeli
 
 SUPPORTED_TASKS["text2text-generation-with-prompt"] = {
     "impl": Text2TextGenerationWithPromptPipeline,
-    "pt": (AutoModelWithLMHead,),
+    "pt": (AutoModelForSeq2SeqLM,),
     "tf": (),
     "default": {
         "model": {
-            "pt": ("ai-forever/rugpt3large_based_on_gpt2", "aa2b602"),
+            "pt": ("ai-forever/rugpt3large_based_on_gpt2", "main"),
         },
     },
     "type": "text",
 }
 SUPPORTED_TASKS["text-generation-with-prompt"] = {
     "impl": TextGenerationWithPromptPipeline,
-    "pt": (AutoModelWithLMHead,),
+    "pt": (AutoModelForCausalLM,),
     "tf": (),
     "default": {
         "model": {
-            "pt": ("ai-forever/rugpt3large_based_on_gpt2", "aa2b602"),
+            "pt": ("ai-forever/rugpt3large_based_on_gpt2", "main"),
         },
     },
     "type": "text",

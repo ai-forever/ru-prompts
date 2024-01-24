@@ -19,7 +19,7 @@ python = "^3.7"
 transformers = "^4.6.0"
 typeguard = "^2.13.3"
 typing-extensions = "^4.0.1"
-torch = "^1.10.0"
+torch = ">=1.10.0"
 hydra-core = {version = "^1.1.0", optional = true}
 datasets = {version = "^1.16.1", optional = true}
 torchtyping = "^0.1.4"
